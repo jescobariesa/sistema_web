@@ -1,0 +1,9 @@
+body{
+    
+  height: 140vh;
+  background:linear-gradient(27deg, #34495e 50%, #2c3c50 50%)
+}
+.text{
+color: white;
+font-size: 110%;
+}
