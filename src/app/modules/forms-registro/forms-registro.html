@@ -1,49 +1,46 @@
 <div class="contenedor-login">
 
-      <div class="contenedorEstilo">
+      <div class="text-center mb-4">
           <h1><p class="text"> Formulario de registro </p></h1>
       </div>
 
-      <div style="height: 10vh;margin: 0;display: flex; justify-content: center; align-items: center;">
+      <form class="mx-auto" style="max-width: 400px;">
 
-        <div>
-          <input type="Usuario" class="form-control" style="position: relative; top: -10px "placeholder="Usuario"  id="tipoUsuario"  disabled  >
-        </div>
-
-        <div>
-          <input style="position: relative; top: -40px "placeholder="DPI" type="text" maxlength="13" oninput="this.value = this.value.replace(/[^0-9]/g, '')"class="form-control" id="tipodpi" required>
+        <div class="mb-3">
+          <input type="text" class="form-control" placeholder="Usuario"  id="tipoUsuario"  disabled  >
         </div>
 
         <div class="mb-3">
-          <input style="position: relative; top: -70px "placeholder="Nombre" type="text" class="form-control" id="tipoNombre" >
+          <input type="text" maxlength="13" oninput="this.value = this.value.replace(/[^0-9]/g, '')" class="form-control" placeholder="DPI" id="tipodpi" required>
         </div>
 
         <div class="mb-3">
-          <input style="position: relative; top: -100px "placeholder="apellido" type="text" class="form-control" id="tipoNombre" >
+          <input type="text" class="form-control" placeholder="Nombre" id="tipoNombre">
         </div>
 
         <div class="mb-3">
-          <input style="position: relative; top: -160px " placeholder="Sexo"type="text" class="form-control" id="tipoNombre" >
+          <input type="text" class="form-control" placeholder="Apellido" id="tipoApellido">
         </div>
 
         <div class="mb-3">
-          <input style="position: relative; top: -190px "placeholder="Fecha de nacimiento"type="text" class="form-control" id="tipoNombre" >
+          <input type="text" class="form-control" placeholder="Sexo" id="tipoSexo">
         </div>
 
-        <div>
-          <input style="position: relative; top: -220px " placeholder="Contraseña"type="password" class="form-control" id="exampleInputPassword1">
+        <div class="mb-3">
+          <input type="text" class="form-control" placeholder="Fecha de nacimiento" id="tipoFecha">
         </div>
 
-        <div>
-          <input style="position: relative; top: -250px " placeholder="Repita Contraseña"type="password" class="form-control" id="exampleInputPassword1">
+        <div class="mb-3">
+          <input type="password" class="form-control" placeholder="Contraseña" id="password">
         </div>
 
-      </div>
+        <div class="mb-3">
+          <input type="password" class="form-control" placeholder="Repita Contraseña" id="passwordRepeat">
+        </div>
 
-      <div class="contenedorEstilo">
-        <div class="botones">
-          <button class="btn btn-success" id="" style=" width:150px; margin-right: 20px;">Ingresar</button>
+        <div class="d-flex justify-content-between">
+          <button class="btn btn-success" style="width: 150px;">Ingresar</button>
           <button type="button" class="btn btn-danger" style=" width:150px;" routerLink="/login">Cancelar</button>
         </div>
-      </div>
+    </form>
 </div>

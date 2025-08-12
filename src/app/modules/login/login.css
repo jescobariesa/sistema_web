@@ -4,7 +4,7 @@
     box-sizing: border-box;
 }
 .contenedor-login{
-    height: 120vh;
+    height: 100vh;
     background:linear-gradient(27deg, #34495e 50%, #2c3c50 50%)
 }
 
