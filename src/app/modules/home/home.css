@@ -1,4 +1,16 @@
+.contenedor-login{
+    height: 100vh;
+    background:linear-gradient(27deg, #34495e 50%, #2c3c50 50%)
+}
+
 .text{
-color: green;
+color: white;
 font-size: 100%;
+}
+
+.contenedor {
+  width: 90%;
+  max-width: 1200px;
+  margin: auto;
+  padding: 40px 0;
 }
