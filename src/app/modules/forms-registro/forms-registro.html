@@ -12,51 +12,55 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js" integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q" crossorigin="anonymous"></script>
      
 
-        <div style="height: 10vh;margin: 0;display: flex; justify-content: center; align-items: center;">
-            <div style="text-align:center; width: 400px; height: 60px; font-size: 12px; padding: 40px;">
-        <h1><p class="text"> Formulario de registro </p></h1>
-    <div class="mb-3">
-    <label for="tipoUsuario"class="form-label" class="text"  style="margin-left: -400px; position: relative; top: 20px ">Usuario:</label>
-  <input type="Usuario" class="form-control" style="position: relative; top: -10px "  id="tipoUsuario"  disabled  >
-  </div>
-  <div class="mb-3">
-    <label for="tipodpi" class="text"style="margin-left: -380px; position: relative; top: -10px " >DPI:</label>
-    <input style="position: relative; top: -40px " type="text" maxlength="13" oninput="this.value = this.value.replace(/[^0-9]/g, '')"class="form-control" id="tipodpi" required> 
-</div>
+      
+      <div style="height: 10vh;margin: 0;display: flex; justify-content: center; align-items: center;">    
+        <div style="text-align:center; width: 400px; height: 60px; font-size: 12px; padding: 40px;">
+          <h1><p class="text"> Formulario de registro </p></h1>
+        </div>
+      </div>
 
-  <div class="mb-3">
- <label for="tipoNombre"class="form-label" class="text"  style="margin-left: -400px; position: relative; top: -40px ">Nombre:</label>
-  <input style="position: relative; top: -70px " type="text" class="form-control" id="tipoNombre" >
-  </div>
-  <div class="mb-3">
-    <label for="tipoNombre"class="form-label" class="text"  style="margin-left: -400px; position: relative; top: -70px ">Apellidos:</label>
-  <input style="position: relative; top: -100px " type="text" class="form-control" id="tipoNombre" >
-  </div>
-  <div class="mb-3">
-    <label for="tipoNombre"class="form-label" class="text"  style="margin-left: -400px; position: relative; top: -100px ">Edad:</label>
-  <input style="position: relative; top: -130px "type="text" maxlength="3" class="form-control" id="tipoNombre" >
-  </div>
-  <div class="mb-3">
-    <label for="tipoNombre"class="form-label" class="text"  style="margin-left: -400px; position: relative; top: -130px ">Sexo:</label>
-  <input style="position: relative; top: -160px "type="text" class="form-control" id="tipoNombre" >
-</div>
-  <div class="mb-3">
-    <label for="tipoNombre"class="form-label" class="text"  style="margin-left: -460px; position: relative; top: -160px ">Fecha de Nacimiento:</label>
-  <input style="position: relative; top: -190px "type="text" class="form-control" id="tipoNombre" >
-  </div>
-  <div class="mb-3">
-    <label for="exampleInputPassword1" class="text" style="margin-left: -420px; position: relative; top: -190px ">Contraseña:</label>
-    <input style="position: relative; top: -220px " type="password" class="form-control" id="exampleInputPassword1">
-  </div>
-  <div class="mb-3">
-    <label for="exampleInputPassword1" class="text" style="margin-left: -440px; position: relative; top: -220px ">Repita Contraseña:</label>
-    <input style="position: relative; top: -250px " type="password" class="form-control" id="exampleInputPassword1">
-<button class="btn btn-success" id="" style=" width:150px; margin-right: 20px;">Ingresar</button>
-  <button type="button" class="btn btn-danger" style=" width:150px;" >Cancelar</button>
-</div>
-</div>
-</div>
+      <div style="height: 10vh;margin: 0;display: flex; justify-content: center; align-items: center;">
+        
+        <div>
+          <input type="Usuario" class="form-control" style="position: relative; top: -10px "placeholder="Usuario"  id="tipoUsuario"  disabled  >
+        </div>
 
+        <div>
+          <input style="position: relative; top: -40px "placeholder="DPI" type="text" maxlength="13" oninput="this.value = this.value.replace(/[^0-9]/g, '')"class="form-control" id="tipodpi" required> 
+        </div>
 
-</body>
+        <div class="mb-3">
+          <input style="position: relative; top: -70px "placeholder="Nombre" type="text" class="form-control" id="tipoNombre" >
+        </div>
+  
+        <div class="mb-3">
+          <input style="position: relative; top: -100px "placeholder="apellido" type="text" class="form-control" id="tipoNombre" >
+        </div>
+
+        <div class="mb-3">
+          <input style="position: relative; top: -160px " placeholder="Sexo"type="text" class="form-control" id="tipoNombre" >
+        </div>
+              
+        <div class="mb-3">
+          <input style="position: relative; top: -190px "placeholder="Fecha de nacimiento"type="text" class="form-control" id="tipoNombre" >
+        </div>
+
+        <div>
+          <input style="position: relative; top: -220px " placeholder="Contraseña"type="password" class="form-control" id="exampleInputPassword1">
+        </div>
+
+        <div>
+          <input style="position: relative; top: -250px " placeholder="Repita Contraseña"type="password" class="form-control" id="exampleInputPassword1">
+        </div>
+
+      </div>
+
+      <div style="height: 10vh;margin: 0;display: flex; justify-content: center; align-items: center;">
+        <div>
+          <button class="btn btn-success" id="" style=" width:150px; margin-right: 20px;">Ingresar</button>
+          <button type="button" class="btn btn-danger" style=" width:150px;" >Cancelar</button>
+        </div>
+      </div>
+
+  </body>
 </html>
