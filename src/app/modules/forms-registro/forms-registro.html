@@ -10,29 +10,25 @@
 </head>
   <body>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js" integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q" crossorigin="anonymous"></script>
-     
 
-      
-      <div style="height: 10vh;margin: 0;display: flex; justify-content: center; align-items: center;">    
-        <div style="text-align:center; width: 400px; height: 60px; font-size: 12px; padding: 40px;">
+      <div class="contenedorEstilo">
           <h1><p class="text"> Formulario de registro </p></h1>
-        </div>
       </div>
 
       <div style="height: 10vh;margin: 0;display: flex; justify-content: center; align-items: center;">
-        
+
         <div>
           <input type="Usuario" class="form-control" style="position: relative; top: -10px "placeholder="Usuario"  id="tipoUsuario"  disabled  >
         </div>
 
         <div>
-          <input style="position: relative; top: -40px "placeholder="DPI" type="text" maxlength="13" oninput="this.value = this.value.replace(/[^0-9]/g, '')"class="form-control" id="tipodpi" required> 
+          <input style="position: relative; top: -40px "placeholder="DPI" type="text" maxlength="13" oninput="this.value = this.value.replace(/[^0-9]/g, '')"class="form-control" id="tipodpi" required>
         </div>
 
         <div class="mb-3">
           <input style="position: relative; top: -70px "placeholder="Nombre" type="text" class="form-control" id="tipoNombre" >
         </div>
-  
+
         <div class="mb-3">
           <input style="position: relative; top: -100px "placeholder="apellido" type="text" class="form-control" id="tipoNombre" >
         </div>
@@ -40,7 +36,7 @@
         <div class="mb-3">
           <input style="position: relative; top: -160px " placeholder="Sexo"type="text" class="form-control" id="tipoNombre" >
         </div>
-              
+
         <div class="mb-3">
           <input style="position: relative; top: -190px "placeholder="Fecha de nacimiento"type="text" class="form-control" id="tipoNombre" >
         </div>
@@ -55,8 +51,8 @@
 
       </div>
 
-      <div style="height: 10vh;margin: 0;display: flex; justify-content: center; align-items: center;">
-        <div>
+      <div class="contenedorEstilo">
+        <div class="botones">
           <button class="btn btn-success" id="" style=" width:150px; margin-right: 20px;">Ingresar</button>
           <button type="button" class="btn btn-danger" style=" width:150px;" >Cancelar</button>
         </div>

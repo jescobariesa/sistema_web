@@ -1,9 +1,25 @@
 body{
-    
   height: 140vh;
   background:linear-gradient(27deg, #34495e 50%, #2c3c50 50%)
 }
+
 .text{
 color: white;
-font-size: 110%;
+font-size: 78%;
+}
+
+.contenedorEstilo {
+  height: 10vh;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center
+}
+
+.botones {
+  height: 10vh;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center
 }
