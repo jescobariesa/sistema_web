@@ -23,3 +23,8 @@ font-size: 78%;
   justify-content: center;
   align-items: center
 }
+
+.contenedor-login{
+    height: 120vh;
+    background:linear-gradient(27deg, #34495e 50%, #2c3c50 50%)
+}

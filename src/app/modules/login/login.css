@@ -3,11 +3,11 @@
     margin: 0;
     box-sizing: border-box;
 }
-body{
-    
+.contenedor-login{
     height: 120vh;
     background:linear-gradient(27deg, #34495e 50%, #2c3c50 50%)
 }
+
 .text{
 color: white;
 font-size: 100%;
