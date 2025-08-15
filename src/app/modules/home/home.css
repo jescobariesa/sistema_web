@@ -1,16 +1,35 @@
-.contenedor-login{
-    height: 100vh;
-    background:linear-gradient(27deg, #34495e 50%, #2c3c50 50%)
-}
 
-.text{
-color: white;
-font-size: 100%;
-}
+.contenedor-login{ 
+    
+    min-height: 100vh;
+    background:linear-gradient(27deg, #34495e 50%, #2c3c50 50%);
+     
+  }
+.navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background-color: #1976d2; 
+      color: white;
+      padding: 10px 20px;
+    }
 
-.contenedor {
-  width: 90%;
-  max-width: 1200px;
-  margin: auto;
-  padding: 40px 0;
-}
+    .menu {
+      display: flex;
+      align-items: center;
+    }
+    .menu-icon {
+      font-size: 24px;
+      margin-right: 10px;
+      cursor: pointer;
+    }
+
+    .title {
+      font-size: 20px;
+      font-weight: bold;
+    }
+
+    .login {
+      font-size: 16px;
+      cursor: pointer;
+    }

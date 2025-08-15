@@ -1,22 +1,29 @@
+
 <div class="contenedor-login">
+ 
+  <div style="height: 50vh;margin: 0;display: flex; justify-content: center; align-items: center;">
+      <div style="text-align:center; width: 400px; height: 60px; font-size: 12px; padding: 40px;">
+        <h1><p class="text">Login</p></h1><br>
+      <form>
+ 
+        <div class="mb-3">
+          <input type="Usuario" class="form-control" id="tipoUsuario" aria-describedby="emailHelp" placeholder="Usuario">
+        </div>
+ 
+        <div class="mb-3">
+          <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Contraseña">
+        </div>
+ 
+        <button class="btn btn-success" style=" width:150px;" routerLink="/home">Ingresar</button><br>
+        <br>
+        <p class="text">¿No tienes usuario?<a routerLink="/registro" class="text" id=""> Registrate</a></p>
+      </form>
+      </div>
+  </div>
+</div>
+ 
+  
+  
 
-<div style="height: 50vh;margin: 0;display: flex; justify-content: center; align-items: center;">
-    <div style="text-align:center; width: 400px; height: 60px; font-size: 12px; padding: 40px;">
-    <h1><p class="text">Login</p></h1><br>
-    <form>
-  <div class="mb-3">
-    <label for="tipoUsuario"class="form-label"><p class="text">Usuario</p></label>
-    <input type="Usuario" class="form-control" id="tipoUsuario" aria-describedby="emailHelp">
-  </div>
-  <div class="mb-3">
-    <label for="exampleInputPassword1" class="text"><p>Contraseña</p><br></label>
-    <input type="password" class="form-control" id="exampleInputPassword1">
-  </div>
-  <button class="btn btn-success" style=" width:150px;" routerLink="/home">Ingresar</button><br>
-  <br>
-  <p class="text">¿No tienes usuario?<a routerLink="/registro" class="text" id=""> Registrate</a></p>
-</form>
-   </div>
-   </div>
 
-  </div>
+ 
