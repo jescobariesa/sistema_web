@@ -33,6 +33,7 @@
       grid-template-columns: 200px  200px;
       margin-top: 30px;
       margin-left: 230px;
+   
     }
 
     .botones button {
@@ -44,9 +45,13 @@
       background-color:#1A2B4C ;
       color: white;
       border-radius: 5px;
+  
+    }
+     .botones button:hover {
+      background-color: #0056b3;
     }
 
-    .boton1{
+    .boton2 {
       padding: 10px 20px;
       margin-right: 10px;
       font-weight: bold;
@@ -57,20 +62,8 @@
       border-radius: 5px;
  }
 
-    
-    .boton {
-    
-  padding: 10px 20px;
-  background-color: #1A2B4C;
-  color: white;
-  border-radius: 6px;
-  cursor: pointer;
-  transition: 0.3s;
-    }
-     .botones button:hover {
-      background-color: #0056b3;
-    }
-     .boton  {
+
+ .boton  {
       padding: 10px 20px;
       margin-right: 10px;
       font-weight: bold;
@@ -90,20 +83,22 @@ input#btn2:checked ~ .botones .boton[for="btn2"] {
   color: white;
 }
 
+ 
 
 
     .tabla {
       max-width: 900px;
       display: grid;
-      grid-template-columns:repeat(9,1fr) ;
-      grid-template-columns: repeat(3,fr);
+      grid-template-columns:repeat(5,1fr) ;
+      grid-template-columns: repeat(2,fr);
       gap:0;
       color: #1A2B4C;
       background-color: #1A2B4C;
       padding: 10px;
       border-radius: 8px;
       width: fit-content; 
-      margin: 0 auto;
+      margin: auto;
+      margin-left: 230px;
     }
     .tabla div {
       display: block;

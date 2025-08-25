@@ -4,6 +4,7 @@ import { FormsRegistroComponent } from './modules/forms-registro/forms-registro'
 import { HomeComponent } from './modules/home/home';
 import { RolesCommponent } from './modules/roles/roles';
 import { GestionUsuariosCommponent } from './modules/gestion-usuarios/gestion-usuarios';
+import { UserPendingCommponent } from './modules/user_pending/user-pending';
 
 
 export const routes: Routes = [
@@ -12,6 +13,7 @@ export const routes: Routes = [
   { path: 'registro', component: FormsRegistroComponent },
   { path: 'home', component: HomeComponent},
   { path: 'rol', component: RolesCommponent},
-  { path: 'user', component: GestionUsuariosCommponent},
+  { path: 'user', component: GestionUsuariosCommponent}, 
+  { path: 'userp',component: UserPendingCommponent},
   { path: '**', redirectTo: ''}
 ];
