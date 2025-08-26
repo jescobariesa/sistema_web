@@ -1,29 +1,59 @@
-
 <div class="contenedor-login">
- 
+
   <div style="height: 50vh;margin: 0;display: flex; justify-content: center; align-items: center;">
       <div style="text-align:center; width: 400px; height: 60px; font-size: 12px; padding: 40px;">
         <h1><p class="text">Login</p></h1><br>
-      <form>
- 
+
+      <form (ngSubmit)="onLogin()" #loginForm="ngForm">
+
         <div class="mb-3">
-          <input type="Usuario" class="form-control" id="tipoUsuario" aria-describedby="emailHelp" placeholder="Usuario">
+          <input
+            type="text"
+            class="form-control"
+            id="tipoUsuario"
+            placeholder="Usuario"
+            [(ngModel)]="usuario"
+            name="usuario"
+            required>
         </div>
- 
+
         <div class="mb-3">
-          <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Contraseña">
+          <input
+            type="password"
+            class="form-control"
+            id="tipoPassword"
+            placeholder="Contraseña"
+            [(ngModel)]="password"
+            name="password"
+            required>
         </div>
- 
-        <button class="btn btn-success" style=" width:150px;" routerLink="/home">Ingresar</button><br>
+
+        <button
+          type="submit"
+          class="btn btn-success"
+          style=" width:150px;"
+          [disabled]="loginForm.invalid">
+          Ingresar
+        </button>
+
         <br>
-        <p class="text">¿No tienes usuario?<a routerLink="/registro" class="text" id=""> Registrate</a></p>
+        <br>
+
+        <p class="text">¿No tienes usuario?
+          <a
+            routerLink="/registro"
+            class="text"> Registrate
+          </a>
+        </p>
       </form>
+
+    <!-- 👇 Aquí mostramos el mensaje -->
+    @if (mensaje) {
+      <div class="alert alert-info mt-3 text-center">
+        {{ mensaje }}
       </div>
+    }
+
+    </div>
   </div>
 </div>
- 
-  
-  
-
-
- 

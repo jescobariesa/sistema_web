@@ -1,8 +1,6 @@
-.contenedor-login{ 
-    
+.contenedor-login{
     min-height: 100vh;
     background:linear-gradient(27deg, #34495e 50%, #2c3c50 50%);
-     
   }
 
    .sidebar {
