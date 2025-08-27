@@ -5,6 +5,7 @@ import { HomeComponent } from './modules/home/home';
 import { RolesCommponent } from './modules/roles/roles';
 import { GestionUsuariosCommponent } from './modules/gestion-usuarios/gestion-usuarios';
 import { UserPendingCommponent } from './modules/user_pending/user-pending';
+import { ArticulosNuevosCommponent } from './modules/home/sub-modules/articulos-nuevos/articulos-nuevos';
 
 
 export const routes: Routes = [
@@ -15,5 +16,6 @@ export const routes: Routes = [
   { path: 'rol', component: RolesCommponent},
   { path: 'user', component: GestionUsuariosCommponent}, 
   { path: 'userp',component: UserPendingCommponent},
+  { path: 'new-art',component: ArticulosNuevosCommponent},
   { path: '**', redirectTo: ''}
 ];
