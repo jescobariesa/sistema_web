@@ -6,16 +6,44 @@ import { RolesCommponent } from './modules/roles/roles';
 import { GestionUsuariosCommponent } from './modules/gestion-usuarios/gestion-usuarios';
 import { UserPendingCommponent } from './modules/user_pending/user-pending';
 import { ArticulosNuevosCommponent } from './modules/home/sub-modules/articulos-nuevos/articulos-nuevos';
-
+import { authGuard } from './guards/auth.guard';
 
 export const routes: Routes = [
+
+  // 🔓 Rutas públicas (sin sesión)
   { path: '', component: LoginComponent },
   { path: 'login', component: LoginComponent },
   { path: 'registro', component: FormsRegistroComponent },
-  { path: 'home', component: HomeComponent},
-  { path: 'rol', component: RolesCommponent},
-  { path: 'user', component: GestionUsuariosCommponent}, 
-  { path: 'userp',component: UserPendingCommponent},
-  { path: 'new-art',component: ArticulosNuevosCommponent},
+
+  // 🔒 Rutas protegidas (requieren login y estado = activo)
+  { path: 'home', component: HomeComponent, canActivate: [authGuard] },
+
+  // Solo admin
+  { path: 'rol',
+    component: RolesCommponent,
+    canActivate: [authGuard],
+    data: {roles: ['rol_admin'] }
+  },
+  { path: 'user',
+    component: GestionUsuariosCommponent,
+    canActivate: [authGuard],
+    data: {roles: ['rol_admin'] }
+  },
+
+  // Solo admin (ejemplo: ver usuarios pendientes)
+  { path: 'userp',
+    component: UserPendingCommponent,
+    canActivate: [authGuard],
+    data: { roles: ['rol_admin'] }
+  },
+
+  // Solo empleados (ejemplo: artículos nuevos en Home)
+  { path: 'new-art',
+    component: ArticulosNuevosCommponent,
+    canActivate: [authGuard],
+    data: { roles: ['rol_admin', 'rol_empleados'] }
+  },
+
+  // Ruta por defecto
   { path: '**', redirectTo: ''}
 ];

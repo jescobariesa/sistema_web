@@ -3,6 +3,7 @@ import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { Router, RouterModule } from '@angular/router';
 import { AuthService } from '../../services/auth.service';
+import { SessionService } from '../../services/session.service';
 
 @Component({
   selector: 'app-login',
@@ -17,10 +18,11 @@ import { AuthService } from '../../services/auth.service';
 export class LoginComponent {
   usuario: string = "";
   password: string = "";
-
-  constructor(private authService: AuthService, private router: Router) {}
-
   mensaje: string = "";
+
+  constructor(private authService: AuthService,
+              private sessionService: SessionService, // Inyectamos para usar el servicio
+              private router: Router) {}
 
   onLogin() {
     if (!this.usuario || !this.password) {
@@ -30,13 +32,17 @@ export class LoginComponent {
     this.authService.login({ usuario: this.usuario, password: this.password }).subscribe({
       next: (res: any) => {
 
+        // Guardar en el servicio de sesión
+        this.sessionService.setUsuario(res.data);
+
         // Guardamos la sesión en localStorage
-        localStorage.setItem("usuario", JSON.stringify(res.data));
+        // localStorage.setItem("usuario", JSON.stringify(res.data));
 
         // Revisamos estado
         if (res.data.estado !== "activo") {
           this.mensaje = "Tu cuenta está pendiente de activación";
-          localStorage.removeItem("usuario"); // limpiamos sesión
+          this.sessionService.logout(); // limpiar sesión si no está activo
+          // localStorage.removeItem("usuario"); // limpiamos sesión
           return;
         }
 
