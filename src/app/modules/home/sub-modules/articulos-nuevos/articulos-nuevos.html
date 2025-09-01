@@ -1,24 +1,70 @@
 <div class="contenedor-login">
 
-     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+ <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
     <div class="container-fluid">
 
         <div class="collapse navbar-collapse" id="navbarNavDarkDropdown">
-            <ul class="navbar-nav">
-                <li class="nav-item dropdown">
-                                   
-                                    <div class="sidebar" >
-                                        <a href="/home">Inicio</a>
-                                        <a href="/user">Gestión de Usuarios</a>
-                                        <a href="/rol">Roles</a>
-                                        <a href="/login">Cerrar Sesión</a>
-                                    </div>
-                            </li>
-                         </ul>
-                        <div class="mx-auto">
-                          <a class="navbar-brand">INGRESO DE NUEVOS ARTICULOS</a>
-                        </div>
+
+             <div class="mx-auto">
+                <a class="navbar-brand">INGRESO DE NUEVOS ARTICULOS</a>
+             </div>
+
         </div>
+        
     </div>
  </nav>
-</div>
+              <div>
+               <a href="/home"><img   src="https://www.rawshorts.com/freeicons/wp-content/uploads/2017/01/blue_repicthousebase_1484336386-1.png"></a>
+            </div>
+
+            <div class="grid-container">
+
+            
+                 <input class="input-1" type="text" placeholder="EL ID se generara automaticamente " disabled > 
+                   
+   
+
+
+
+                 <input id="Articulo" type="text" list="lista-articulos" class="input-2" placeholder="Nombre del Articulo">
+
+                 <datalist id="lista-articulos">
+
+                  <option>Playeras</option>
+                  <option>Pantalones</option>
+
+                 </datalist>
+
+
+               <div class="grid">
+                <button class="btn btn-success" >Guardar
+               </button>
+
+               <button class="btn btn-primary">
+                 Borrar Datos
+               </button>
+
+               <button class="btn btn-danger">
+                 Descargar en PDF
+              </button>
+
+               </div>
+            </div>
+            
+
+               <div class="tabla" id="tablaPendientes">
+                    <div class="encabezado">ID</div>
+                    <div class="encabezado">Nombre Del Articulo</div>
+                    <div></div>
+                    <div></div>
+                    <div>1</div>
+                    <div>Playeras</div>
+                    <div>Modificar</div>
+                    <div>Eliminar</div>
+                    <div>2</div>
+                    <div>Pantalones</div>
+                    <div>Modificar</div>
+                    <div>Eliminar</div>
+               </div>
+</div>        
+
