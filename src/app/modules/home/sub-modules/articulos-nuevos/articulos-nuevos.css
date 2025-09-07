@@ -5,14 +5,13 @@
      
   }
 
-img{
+.mat-icon{
   position: absolute;
-  margin-top: -50px;
-  width: 55px;
-  left: 15px;
-
+  margin-top: -35px;
+  left: 25px;
    
   } 
+
  
 .grid-container{
   margin-top: 10px;
@@ -49,8 +48,8 @@ img{
       
       max-width: 900px;
       display: grid;
-      grid-template-columns:repeat(3,2fr) ;
-      grid-template-columns: repeat(4,1fr);
+      grid-template-columns:repeat(5,4fr) ;
+      grid-template-columns: repeat(5,1fr);
       gap:0;
       color: #1A2B4C;
       background-color: #1A2B4C;
@@ -71,3 +70,12 @@ img{
       font-weight: bold;
       background-color: #B0B0B0;
     }
+.icono-blanco{
+   color: white;
+  
+}
+
+.icono-blanco.large{
+  transform: scale(1.5);
+
+}

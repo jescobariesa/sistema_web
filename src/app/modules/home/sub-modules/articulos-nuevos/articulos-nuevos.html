@@ -14,7 +14,7 @@
     </div>
  </nav>
               <div>
-               <a href="/home"><img   src="https://www.rawshorts.com/freeicons/wp-content/uploads/2017/01/blue_repicthousebase_1484336386-1.png"></a>
+               <a href="/home"><mat-icon class="icono-blanco large">home</mat-icon></a>
             </div>
 
             <div class="grid-container">
@@ -22,19 +22,18 @@
             
                  <input class="input-1" type="text" placeholder="EL ID se generara automaticamente " disabled > 
                    
-   
+                 <input id="Articulo" type="text" list="lista-articulos" class="input-2" type="text" placeholder="Proveedor ">
 
-
-
-                 <input id="Articulo" type="text" list="lista-articulos" class="input-2" placeholder="Nombre del Articulo">
-
-                 <datalist id="lista-articulos">
+                  <datalist id="lista-articulos">
 
                   <option>Playeras</option>
                   <option>Pantalones</option>
 
                  </datalist>
+                 
 
+
+                 <input id="Articulo" type="text" list="lista-articulos" class="input-2" placeholder="Nombre del Articulo">
 
                <div class="grid">
                 <button class="btn btn-success" >Guardar
@@ -54,14 +53,17 @@
 
                <div class="tabla" id="tablaPendientes">
                     <div class="encabezado">ID</div>
+                    <div class="encabezado">Proveedor</div>
                     <div class="encabezado">Nombre Del Articulo</div>
                     <div></div>
                     <div></div>
                     <div>1</div>
+                    <div>ProveedorA</div>
                     <div>Playeras</div>
                     <div>Modificar</div>
                     <div>Eliminar</div>
                     <div>2</div>
+                    <div>ProveedorB</div>
                     <div>Pantalones</div>
                     <div>Modificar</div>
                     <div>Eliminar</div>
