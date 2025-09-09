@@ -8,6 +8,9 @@ import { UserPendingCommponent } from './modules/user_pending/user-pending';
 import { ArticulosNuevosCommponent } from './modules/home/sub-modules/articulos-nuevos/articulos-nuevos';
 import { authGuard } from './guards/auth.guard';
 import { SuppliersComponent } from './modules/home/sub-modules/suppliers/suppliers';
+import { VentasComponent } from './modules/home/sub-modules/ventas/ventas';
+import { AchatsComponent } from './modules/home/sub-modules/achats/achats';
+import { ReportesComponent } from './modules/home/sub-modules/reportes/reportes';
 
 export const routes: Routes = [
 
@@ -59,6 +62,27 @@ export const routes: Routes = [
   // Accede el rol de: administrador, empleados
   { path: 'provid',
     component: SuppliersComponent,
+    canActivate: [authGuard],
+    data: { roles: ['rol_admin', 'rol_empleados']}
+  },
+
+    // Accede el rol de: administrador, empleados
+  { path: 'vent',
+    component: VentasComponent,
+    canActivate: [authGuard],
+    data: { roles: ['rol_admin', 'rol_empleados']}
+  },
+
+    // Accede el rol de: administrador, empleados
+  { path: 'achat',
+    component: AchatsComponent,
+    canActivate: [authGuard],
+    data: { roles: ['rol_admin', 'rol_empleados']}
+  },
+
+    // Accede el rol de: administrador, empleados
+  { path: 'reports',
+    component: ReportesComponent,
     canActivate: [authGuard],
     data: { roles: ['rol_admin', 'rol_empleados']}
   },

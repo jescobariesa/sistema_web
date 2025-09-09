@@ -79,3 +79,44 @@
   transform: scale(1.5);
 
 }
+.icono-blanco:hover{
+  color: #ecececec;
+}
+
+
+ .modificar{
+      
+      padding: 10px 40px;
+      margin-right: 10px;
+      cursor: pointer;
+      border: none;
+      
+      border-radius: 5px;
+      color: #ffff;
+ }
+ .modificar:hover{
+  background-color: #006B3C;
+ }
+
+
+
+  .eliminar {
+  padding: 10px 20px;
+  
+  border-radius: 6px;
+  cursor: pointer;
+  transition: 0.3s;
+    }
+
+     .eliminar  {
+      padding: 10px 20px;
+      margin-right: 10px;
+      cursor: pointer;
+      border: none;
+      background-color:#C0C0C0 ;
+      border-radius: 5px;
+ }
+.eliminar:hover {
+      background-color: grey;
+    }
+

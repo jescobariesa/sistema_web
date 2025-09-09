@@ -3,11 +3,11 @@ import { MatIconModule } from '@angular/material/icon';
 import { RouterModule } from '@angular/router';
 
 @Component({
-  selector: 'app-articulos-nuevos',
+  selector: 'app-ventas',
   imports: [RouterModule,MatIconModule],
-  templateUrl: './suppliers.html',
-  styleUrl: './suppliers.css'
+  templateUrl: './ventas.html',
+  styleUrl: './ventas.css'
 })
-export class SuppliersComponent {
+export class VentasComponent {
 
 }
