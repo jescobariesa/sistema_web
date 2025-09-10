@@ -9,10 +9,10 @@
                 <a class="navbar-brand">INGRESO DE NUEVOS ARTICULOS</a>
              </div>
 
-             <a href="/login"><button type="button" class="btn btn-danger">Cerrar sesion</button></a>
+             <button type="button" class="btn btn-danger" (click)="onLogout()">Cerrar sesion</button>
 
         </div>
-        
+
     </div>
  </nav>
               <div>
@@ -21,9 +21,9 @@
 
             <div class="grid-container">
 
-            
-                 <input class="input-1" type="text" placeholder="EL ID se generara automaticamente " disabled > 
-                   
+
+                 <input class="input-1" type="text" placeholder="EL ID se generara automaticamente " disabled >
+
                  <input id="Articulo" type="text" list="lista-articulos" class="input-2" type="text" placeholder="Proveedor ">
 
                   <datalist id="lista-articulos">
@@ -32,7 +32,7 @@
                   <option>Pantalones</option>
 
                  </datalist>
-                 
+
 
 
                  <input id="Articulo" type="text" class="input-2" placeholder="Nombre del Articulo">
@@ -51,7 +51,7 @@
 
                </div>
             </div>
-            
+
 
                <div class="tabla" id="tablaPendientes">
                     <div class="encabezado">ID</div>
@@ -85,5 +85,5 @@
                      <label for="btn2" class="btn btn-danger" routerLink="">Eliminar</label>
                   </div>
                </div>
-</div>        
+</div>
 

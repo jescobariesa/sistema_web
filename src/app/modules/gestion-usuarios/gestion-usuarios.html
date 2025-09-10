@@ -5,20 +5,20 @@
 
         <div class="collapse navbar-collapse" id="navbarNavDarkDropdown">
             <ul class="navbar-nav">
-                <li class="nav-item dropdown">                
+                <li class="nav-item dropdown">
                                     <div class="sidebar" >
                                         <a href="/home">Inicio</a>
                                         <a href="/user">Gestión de Usuarios</a>
                                         <a href="/rol">Roles</a>
-                                    </div> 
+                                    </div>
                             </li>
                          </ul>
                         <div class="mx-auto">
                           <a class="navbar-brand">BIENVENIDO A GESTION DE USUARIOS</a>
                         </div>
 
-                        <a href="/login"><button type="button" class="btn btn-danger">Cerrar sesion</button></a>
-        </div> 
+                        <button type="button" class="btn btn-danger" (click)="onLogout()">Cerrar sesion</button>
+        </div>
     </div>
  </nav>
        <input type="radio" name="estado" id="btn1" hidden>
@@ -28,7 +28,7 @@
   <label for="btn1" class="boton1" routerLink="/user">Pendientes</label>
   <label for="btn2" class="boton" routerLink="/userp">Activos</label>
 </div>
-  
+
 
   <div class="tabla" id="tablaPendientes">
     <div class="encabezado">Usuario</div>
@@ -58,10 +58,10 @@
     <div>2</div>
     <div>3</div>
     <div>4</div>
-    <div>5</div> 
+    <div>5</div>
 
 
 
  </div>
- 
+
 

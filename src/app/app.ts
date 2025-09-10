@@ -17,12 +17,4 @@ import { CommonModule } from '@angular/common';
 })
 export class App {
   protected readonly title = signal('sistema_web');
-
-  constructor(public sessionService: SessionService, private router: Router) {}
-
-  onLogout() {
-    this.sessionService.logout();
-    this.router.navigate(['/login']);
-  }
-
 }

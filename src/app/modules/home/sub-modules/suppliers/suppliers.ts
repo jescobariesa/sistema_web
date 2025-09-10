@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { MatIconModule } from '@angular/material/icon';
-import { RouterModule } from '@angular/router';
+import { Router, RouterModule } from '@angular/router';
+import { SessionService } from '../../../../services/session.service';
 
 @Component({
   selector: 'app-articulos-nuevos',
@@ -9,5 +10,17 @@ import { RouterModule } from '@angular/router';
   styleUrl: './suppliers.css'
 })
 export class SuppliersComponent {
+
+  // Inyectamos varios servicios en un constructor para no alterar el funcionamiento
+  constructor(
+    private sessionService: SessionService,
+    private router: Router
+  ) {}
+
+onLogout() {
+    this.sessionService.logout();
+    this.router.navigate(['/login']);
+  }
+
 
 }

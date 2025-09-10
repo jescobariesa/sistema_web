@@ -16,6 +16,13 @@ import { Router } from '@angular/router';
   ]
 })
 export class FormsRegistroComponent {
+
+  // Inyectamos varios servicios en un constructor para no alterar el funcionamiento
+  constructor(
+    private authService: AuthService,
+    private router: Router
+  ) {}
+
   // Datos del formulario
   formData = {
     dpi: '',
@@ -29,7 +36,7 @@ export class FormsRegistroComponent {
 
   mensaje: string = '';
 
-  constructor(private authService: AuthService, private router: Router) {}
+
 
   onRegister() {
     // 1️⃣ Validar contraseñas coinciden
