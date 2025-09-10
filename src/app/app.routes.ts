@@ -16,7 +16,8 @@ export const routes: Routes = [
 
   // 🔓 Rutas públicas (sin sesión)
   { path: '',
-    component: LoginComponent
+    redirectTo: '/login',
+    pathMatch: 'full'
   },
 
   { path: 'login',
@@ -56,37 +57,39 @@ export const routes: Routes = [
   { path: 'new-art',
     component: ArticulosNuevosCommponent,
     canActivate: [authGuard],
-    data: { roles: ['rol_admin', 'rol_empleados'] }
+    data: { roles: ['rol_admin', 'rol_empleado'] }
   },
 
   // Accede el rol de: administrador, empleados
   { path: 'provid',
     component: SuppliersComponent,
     canActivate: [authGuard],
-    data: { roles: ['rol_admin', 'rol_empleados']}
+    data: { roles: ['rol_admin', 'rol_empleado']}
   },
 
     // Accede el rol de: administrador, empleados
   { path: 'vent',
     component: VentasComponent,
     canActivate: [authGuard],
-    data: { roles: ['rol_admin', 'rol_empleados']}
+    data: { roles: ['rol_admin', 'rol_empleado']}
   },
 
     // Accede el rol de: administrador, empleados
   { path: 'achat',
     component: AchatsComponent,
     canActivate: [authGuard],
-    data: { roles: ['rol_admin', 'rol_empleados']}
+    data: { roles: ['rol_admin', 'rol_empleado']}
   },
 
     // Accede el rol de: administrador, empleados
   { path: 'reports',
     component: ReportesComponent,
     canActivate: [authGuard],
-    data: { roles: ['rol_admin', 'rol_empleados']}
+    data: { roles: ['rol_admin', 'rol_empleado']}
   },
 
   // Ruta por defecto
-  { path: '**', redirectTo: ''}
+  { path: '**',
+    redirectTo: '/login'
+  }
 ];
