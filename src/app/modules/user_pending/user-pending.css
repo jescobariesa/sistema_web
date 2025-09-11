@@ -8,7 +8,7 @@
  
  .sidebar {
       height: 100vh;
-      width: 180px;
+      width: 150px;
       position: fixed;
       top: 34px;
       left: 0;
@@ -89,7 +89,7 @@ input#btn2:checked ~ .botones .boton[for="btn2"] {
     .tabla {
       max-width: 900px;
       display: grid;
-      grid-template-columns:repeat(5,1fr) ;
+      grid-template-columns:repeat(6,1fr) ;
       grid-template-columns: repeat(2,fr);
       gap:0;
       color: #1A2B4C;
