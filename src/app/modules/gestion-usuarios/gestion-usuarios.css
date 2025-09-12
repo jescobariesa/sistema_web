@@ -1,11 +1,11 @@
-.contenedor-login{ 
-    
+.contenedor-login{
+
     min-height: 100vh;
     background:linear-gradient(27deg, #34495e 50%, #2c3c50 50%);
-     
+
   }
 
- 
+
  .sidebar {
       height: 100vh;
       width: 150px;
@@ -57,9 +57,9 @@
       border-radius: 5px;
  }
 
-    
+
     .boton {
-    
+
   padding: 10px 20px;
   background-color: #1A2B4C;
   color: white;
@@ -102,7 +102,7 @@ input#btn2:checked ~ .botones .boton[for="btn2"] {
       background-color: #1A2B4C;
       padding: 10px;
       border-radius: 8px;
-      width: fit-content; 
+      width: fit-content;
       margin: 0 auto;
     }
     .tabla div {
@@ -118,4 +118,8 @@ input#btn2:checked ~ .botones .boton[for="btn2"] {
       background-color: #B0B0B0;
     }
 
- 
+ .pagina-label {
+  margin: 0 10px;
+  color: white;
+  font-weight: bold; /* opcional, para que resalte */
+}

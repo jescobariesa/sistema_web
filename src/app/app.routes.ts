@@ -11,6 +11,7 @@ import { SuppliersComponent } from './modules/home/sub-modules/suppliers/supplie
 import { VentasComponent } from './modules/home/sub-modules/ventas/ventas';
 import { AchatsComponent } from './modules/home/sub-modules/achats/achats';
 import { ReportesComponent } from './modules/home/sub-modules/reportes/reportes';
+import { UserinactivateComponent } from './modules/userinactivate/userinactivate';
 
 export const routes: Routes = [
 
@@ -49,6 +50,13 @@ export const routes: Routes = [
 
   { path: 'userp',
     component: UserPendingCommponent,
+    canActivate: [authGuard],
+    data: { roles: ['rol_admin'] }
+  },
+
+  {
+    path: 'userinac',
+    component: UserinactivateComponent,
     canActivate: [authGuard],
     data: { roles: ['rol_admin'] }
   },

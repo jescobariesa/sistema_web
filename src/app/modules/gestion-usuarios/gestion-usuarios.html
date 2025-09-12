@@ -1,73 +1,116 @@
 <div class="contenedor-login">
 
- <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
     <div class="container-fluid">
 
-        <div class="collapse navbar-collapse" id="navbarNavDarkDropdown">
-            <ul class="navbar-nav">
-                <li class="nav-item dropdown">
-                                    <div class="sidebar" >
-                                        <a href="/home">Inicio</a>
-                                        <a href="/user">Gestión de Usuarios</a>
-                                        <a href="/rol">Roles</a>
-                                    </div>
-                            </li>
-                         </ul>
-                        <div class="mx-auto">
-                          <a class="navbar-brand">BIENVENIDO A GESTION DE USUARIOS</a>
-                        </div>
-
-                        <button type="button" class="btn btn-danger" (click)="onLogout()">Cerrar sesion</button>
+      <div class="collapse navbar-collapse" id="navbarNavDarkDropdown">
+        <ul class="navbar-nav">
+          <li class="nav-item dropdown">
+            <div class="sidebar" >
+              <a href="/home">Inicio</a>
+              <a href="/user">Gestión de Usuarios</a>
+              <a href="/rol">Roles</a>
+            </div>
+          </li>
+        </ul>
+        <div class="mx-auto">
+          <a class="navbar-brand">BIENVENIDO A GESTION DE USUARIOS</a>
         </div>
+
+        <button type="button" class="btn btn-danger" (click)="onLogout()">Cerrar sesion</button>
+      </div>
     </div>
- </nav>
-       <input type="radio" name="estado" id="btn1" hidden>
-       <input type="radio" name="estado" id="btn2" hidden>
+  </nav>
 
-<div class="botones">
-  <label for="btn1" class="boton1" routerLink="/user">Pendientes</label>
-  <label for="btn2" class="boton" routerLink="/userp">Activos</label>
-</div>
+  <div class="botones">
+    <label class="boton1" routerLink="/user">Pendientes</label>
+    <label class="boton" routerLink="/userp">Activos</label>
+  </div>
 
-
+<!-- 🔹 Tabla dinámica -->
   <div class="tabla" id="tablaPendientes">
+
+    <!-- Encabezados -->
     <div class="encabezado">Usuario</div>
     <div class="encabezado">DPI</div>
-    <div class="encabezado">Nombre</div>
+    <div class="encabezado">Nombres</div>
     <div class="encabezado">Apellidos</div>
-    <div class="encabezado">sexo</div>
-    <div class="encabezado">Fecha nacimiento</div>
-    <div class="encabezado">rol</div>
+    <div class="encabezado">Sexo</div>
+    <div class="encabezado">Fecha de nacimiento</div>
+    <div class="encabezado">Rol</div>
     <div class="encabezado">Estado</div>
-    <div class="encabezado">Fecha_cracion</div>
+    <div class="encabezado">Fecha de creación</div>
     <div class="encabezado"></div>
     <div class="encabezado"></div>
-     <div>1</div>
-     <div></div>
-    <div>Juan Pérez</div>
-    <div>Pendiente</div>
-    <div>Editar</div>
-    <div></div>
-    <div></div>
-    <div></div>
-    <div></div>
-    <div><button class="btn btn-success" >Autorizar</button></div>
-    <div> <button class="btn btn-danger">Rechazar</button></div>
-
-    <div>2</div>
-    <div></div>
-    <div>María López</div>
-    <div>Activo</div>
-    <div>Editar</div>
-    <div>1</div>
-    <div>2</div>
-    <div>3</div>
-    <div>4</div>
-    <div><button class="btn btn-success" >Autorizar</button></div>
-    <div> <button class="btn btn-danger">Rechazar</button></div>
 
 
+    <!-- 🔹 Recorremos usuarios pendientes -->
+    <ng-container *ngFor="let user of usuariosPaginados">
+      <div>{{ user.usuario }}</div>
+      <div>{{ user.dpi }}</div>
+      <div>{{ user.nombres }}</div>
+      <div>{{ user.apellidos }}</div>
+      <div>{{ user.sexo }}</div>
+      <div>{{ user.fecha_nacimiento | date:'yyyy-MM-dd' }}</div>
 
- </div>
+      <!-- 🔹 Select de rol -->
+      <div>
+        <select
+          class="form-control"
+          [(ngModel)]="user.selectedRol"
+          [attr.name]="'rol-' + user._id"
+          aria-label="Seleccionar rol para el usuario">
+          <option value="" disabled selected>Seleccionar rol</option>
+          <option value="rol_admin">Administrador</option>
+          <option value="rol_empleado">Empleado</option>
+        </select>
+      </div>
 
+      <!-- 🔹 Select de estado -->
+      <div>
+        <select
+          class="form-control"
+          [(ngModel)]="user.selectedEstado"
+          [attr.name]="'estado-' + user._id"
+          aria-label="Seleccionar estado para el usuario">>
+          <option value="" disabled selected>Seleccionar estado</option>
+          <option value="activo">Activo</option>
+        </select>
+      </div>
 
+      <div>{{ user.createdAt | date:'yyyy-MM-dd HH:mm' }}</div>
+
+      <!-- Botones -->
+      <div>
+        <button
+          class="btn btn-success"
+          [disabled]="!user.selectedRol || !user.selectedEstado"
+          (click)="autorizar(user._id, user.selectedRol, user.selectedEstado)">
+          Autorizar
+        </button>
+      </div>
+
+      <div>
+        <button class="btn btn-danger"
+        (click)="rechazar(user._id)">
+        Rechazar
+        </button>
+      </div>
+
+    </ng-container>
+  </div>
+
+<!-- 🔹 Controles de paginación -->
+<div class="paginacion text-center mt-3">
+  <button class="btn btn-success" (click)="cambiarPagina(currentPage - 1)" [disabled]="currentPage === 1">
+    Anterior
+  </button>
+
+  <span class="pagina-label">Página {{ currentPage }} de {{ totalPages }}</span>
+
+  <button class="btn btn-success" (click)="cambiarPagina(currentPage + 1)" [disabled]="currentPage === totalPages">
+    Siguiente
+  </button>
+</div>
+
+</div>
