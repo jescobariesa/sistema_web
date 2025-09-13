@@ -13,7 +13,13 @@ import { CommonModule } from '@angular/common';
   templateUrl: './gestion-usuarios.html',
   styleUrl: './gestion-usuarios.css'
 })
+
 export class GestionUsuariosCommponent implements OnInit {
+
+  mensaje: string | null = null;
+  mensajeTipo: 'success' | 'error' | 'info' | null = null;
+  usuarioARechazar: string | null = null; // guarda el ID del usuario a rechazar
+  mostrarConfirmRechazo: boolean = false; // controla la vista del recuadro de confirmación
 
   usuariosPendientes: any[] = []; // Aquí se guardan los usuarios de la BD
   currentPage: number = 1; // Página actual
@@ -75,27 +81,60 @@ export class GestionUsuariosCommponent implements OnInit {
 
   // Agregamos los metodos de Autorizar y Rechazar
   autorizar(id: string, rol: string, estado: string) {
+    if (!rol || !estado) {
+    this.mostrarMensaje('Debes seleccionar rol y estado antes de autorizar', 'info');
+    return;
+    }
+
     this.usuarioService.autorizarUsuario(id, rol, estado).subscribe({
       next: (res) => {
-        alert(res.msg);
+        this.mostrarMensaje(res.msg || 'Usuario autorizado con éxito', 'success');
         this.cargarPendientes(); // refrescar lista
       },
       error: (err) => {
-        alert(err.error?.msg || "Error al autorizar usuario");
+       this.mostrarMensaje(err.error?.msg || 'Error al autorizar usuario', 'error');
       }
     });
   }
 
   rechazar(id: string) {
-    this.usuarioService.rechazarUsuario(id).subscribe({
-      next: (res) => {
-        alert(res.msg);
-        this.cargarPendientes(); // refrescar lista
-      },
-      error: (err) => {
-        alert(err.error?.msg || "Error al rechazar usuario");
-      }
-    });
+  this.usuarioARechazar = id;
+  this.mostrarConfirmRechazo = true; // mostramos el bloque de confirmación
+}
+
+// Método para confirmar rechazo
+confirmarRechazo() {
+  if (!this.usuarioARechazar) return;
+
+  this.usuarioService.rechazarUsuario(this.usuarioARechazar).subscribe({
+    next: (res: any) => {
+      this.mostrarMensaje(res.msg || 'Usuario rechazado', 'error');
+      this.cargarPendientes();
+      this.cancelarRechazo(); // limpiamos
+    },
+    error: (err: any) => {
+      this.mostrarMensaje(err.error?.msg || 'Error al rechazar usuario', 'error');
+      this.cancelarRechazo();
+    }
+  });
+}
+
+// Método para cancelar rechazo
+cancelarRechazo() {
+  this.usuarioARechazar = null;
+  this.mostrarConfirmRechazo = false;
+}
+
+// Método reutilizable
+mostrarMensaje(texto: string, tipo: 'success' | 'error' | 'info') {
+  this.mensaje = texto;
+  this.mensajeTipo = tipo;
+
+}
+
+cerrarMensaje() {
+  this.mensaje = null;
+  this.mensajeTipo = null;
 }
 
 }

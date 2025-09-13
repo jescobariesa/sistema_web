@@ -113,4 +113,19 @@
   </button>
 </div>
 
+<!-- 🔹 Confirmación de rechazo -->
+<div *ngIf="mostrarConfirmRechazo" class="confirm-box">
+  <p>¿Estás seguro que deseas rechazar este usuario?</p>
+  <div class="confirm-actions">
+    <button class="btn btn-danger" (click)="confirmarRechazo()">Sí, rechazar</button>
+    <button class="btn btn-secondary" (click)="cancelarRechazo()">Cancelar</button>
+  </div>
+</div>
+
+<!-- 🔹 Mensaje inline -->
+<div *ngIf="mensaje" class="custom-alert" [ngClass]="mensajeTipo">
+  <span>{{ mensaje }}</span>
+  <button class="close-btn" (click)="cerrarMensaje()">×</button>
+</div>
+
 </div>

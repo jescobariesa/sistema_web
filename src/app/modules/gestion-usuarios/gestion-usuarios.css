@@ -91,7 +91,6 @@ input#btn2:checked ~ .botones .boton[for="btn2"] {
 }
 
 
-
     .tabla {
       max-width: 900px;
       display: grid;
@@ -122,4 +121,61 @@ input#btn2:checked ~ .botones .boton[for="btn2"] {
   margin: 0 10px;
   color: white;
   font-weight: bold; /* opcional, para que resalte */
+}
+
+.custom-alert {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 400px;
+  margin: 15px auto; /* centra horizontalmente */
+  padding: 10px 15px;
+  border-radius: 6px;
+  font-weight: bold;
+  position: relative;
+}
+
+.custom-alert.success {
+  background-color: #d4edda;
+  color: #155724;
+}
+
+.custom-alert.error {
+  background-color: #f8d7da;
+  color: #721c24;
+}
+
+.custom-alert.info {
+  background-color: #d1ecf1;
+  color: #0c5460;
+}
+
+.close-btn {
+  background: transparent;
+  border: none;
+  font-size: 18px;
+  font-weight: bold;
+  cursor: pointer;
+  color: inherit;
+  margin-left: 10px;
+}
+
+.confirm-box {
+  width: 400px;
+  margin: 20px auto;
+  padding: 15px;
+  background: #fff3f3;
+  border: 1px solid #f5c6cb;
+  border-radius: 6px;
+  text-align: center;
+  color: #721c24;
+  font-weight: bold;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+}
+
+.confirm-actions {
+  margin-top: 10px;
+  display: flex;
+  justify-content: center;
+  gap: 10px;
 }
