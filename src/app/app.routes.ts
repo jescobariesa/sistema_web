@@ -12,6 +12,7 @@ import { VentasComponent } from './modules/home/sub-modules/ventas/ventas';
 import { AchatsComponent } from './modules/home/sub-modules/achats/achats';
 import { ReportesComponent } from './modules/home/sub-modules/reportes/reportes';
 import { UserinactivateComponent } from './modules/userinactivate/userinactivate';
+import { UserdeniedComponent } from './modules/userdenied/userdenied';
 
 export const routes: Routes = [
 
@@ -42,21 +43,28 @@ export const routes: Routes = [
     data: {roles: ['rol_admin'] }
   },
 
-  { path: 'user',
+  { path: 'gestuserp',
     component: GestionUsuariosCommponent,
     canActivate: [authGuard],
     data: {roles: ['rol_admin'] }
   },
 
-  { path: 'userp',
+  { path: 'useractive',
     component: UserPendingCommponent,
     canActivate: [authGuard],
     data: { roles: ['rol_admin'] }
   },
 
   {
-    path: 'userinac',
+    path: 'userinactive',
     component: UserinactivateComponent,
+    canActivate: [authGuard],
+    data: { roles: ['rol_admin'] }
+  },
+
+  {
+    path: 'userdenied',
+    component: UserdeniedComponent,
     canActivate: [authGuard],
     data: { roles: ['rol_admin'] }
   },
