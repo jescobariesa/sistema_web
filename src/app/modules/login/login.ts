@@ -50,7 +50,7 @@ export class LoginComponent {
         if (res.data.rol === "rol_admin") {
           this.router.navigate(['/home']);
         } else if (res.data.rol === "rol_empleado") {
-          this.router.navigate(['/user']);
+          this.router.navigate(['/home']);
         } else {
           this.mensaje = "Rol no autorizado";
         }
