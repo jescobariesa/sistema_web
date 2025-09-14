@@ -8,7 +8,7 @@
  
  .sidebar {
       height: 100vh;
-      width: 150px;
+      width: 130px;
       position: fixed;
       top: 34px;
       left: 0;
@@ -30,7 +30,7 @@
 
       margin-bottom: 10px;
       display: grid;
-      grid-template-columns: 200px  200px;
+      grid-template-columns: 200px  200px 200px 200px;
       margin-top: 30px;
       margin-left: 230px;
    
@@ -82,9 +82,6 @@ input#btn2:checked ~ .botones .boton[for="btn2"] {
   background-color: #0056b3;
   color: white;
 }
-
- 
-
 
     .tabla {
       max-width: 900px;

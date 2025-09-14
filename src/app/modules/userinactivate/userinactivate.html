@@ -1,1 +1,61 @@
-<p>userinactivate works!</p>
+<div class="contenedor-login">
+
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container-fluid">
+
+      <div class="collapse navbar-collapse" id="navbarNavDarkDropdown">
+        <ul class="navbar-nav">
+          <li class="nav-item dropdown">
+            <div class="sidebar" >
+              <a href="/home">Inicio</a>
+              <a href="/gestuserp">Gestión de Usuarios</a>
+              <a href="/rol">Roles</a>
+            </div>
+          </li>
+        </ul>
+        <div class="mx-auto">
+          <a class="navbar-brand">BIENVENIDO A GESTION DE INACTIVOS</a>
+        </div>
+
+        <button type="button" class="btn btn-danger" (click)="onLogout()">Cerrar sesion</button>
+      </div>
+    </div>
+  </nav>
+
+<input type="radio" name="estado" id="btn1" hidden>
+<input type="radio" name="estado" id="btn2" hidden>
+
+<div class="botones">
+  <label for="btn1" class="boton" routerLink="/gestuserp">Pendientes</label>
+  <label for="btn2" class="boton" routerLink="/useractive">Activos</label>
+  <label for="btn3" class="boton3" routerLink="/userinactive">Inactivos</label>
+  <label for="btn4" class="boton" routerLink="/userdenied">Rechazados</label>
+</div>
+
+   <div>
+    <div class="tabla oculto" id="tablaActivos">
+    <div class="encabezado">Nombre</div>
+    <div class="encabezado">Apellido</div>
+    <div class="encabezado">Usuario</div>
+    <div class="encabezado">Estado</div>
+    <div class="encabezado">Rol</div>
+    <div class="encabezado"></div>
+
+    <div>2</div>
+    <div>María López</div>
+    <div>Activo</div>
+    <div>Editar</div>
+    <div>2</div>
+    <div><button class="btn btn-success">Activar</button></div>
+
+    <div>4</div>
+    <div>Luis Gómez</div>
+    <div>Activo</div>
+    <div>Editar</div>
+    <div>2</div>
+    <div><button class="btn btn-success">Activar</button></div>
+
+</div>
+
+
+

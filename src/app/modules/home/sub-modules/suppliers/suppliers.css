@@ -24,6 +24,37 @@
   color: #ecececec;
 }
 
+.contenedor{
+      
+      max-width: 230px;
+      display: grid;
+      gap: 0px;
+      color: #FFF;
+      background-color: #1A2B4C;
+      padding: 10px;
+      border-radius: 8px;
+      width: fit-content; 
+      margin: auto;
+      margin-top: 30px;
+    }
+    .card{
+      display: block;
+      padding: 8px;
+      background-color: #C0C0C0;
+      box-shadow: 2px 2px 10px rgba(0, 0, 0, .40);
+      text-align: center;
+     
+    }
+    .encabezado {
+      font-weight: bold;
+      background-color: #B0B0B0;
+    }
+     .btn-success{
+      text-align: center;
+      margin-left: 60px;
+     }
+
+
  
 
 
