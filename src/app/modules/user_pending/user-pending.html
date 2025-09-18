@@ -1,66 +1,92 @@
 <div class="contenedor-login">
-
- <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
     <div class="container-fluid">
-
-        <div class="collapse navbar-collapse" id="navbarNavDarkDropdown">
-            <ul class="navbar-nav">
-                <li class="nav-item dropdown">
-                                    <div class="sidebar" >
-                                        <a href="/home">Inicio</a>
-                                        <a href="/gestuserp">Gestión de Usuarios</a>
-                                        <a href="/rol">Roles</a>
-                                    </div>
-                            </li>
-                         </ul>
-                        <div class="mx-auto">
-                          <a class="navbar-brand">BIENVENIDO A GESTION DE USUARIOS</a>
-                        </div>
-
-                        <button type="button" class="btn btn-danger" (click)="onLogout()">Cerrar sesion</button>
-        </div>
+      <div class="collapse navbar-collapse" id="navbarNavDarkDropdown">
+        <ul class="navbar-nav">
+          <li class="nav-item dropdown">
+            <div class="sidebar" >
+              <a href="/home">Inicio</a>
+              <a href="/gestuserp">Gestión de Usuarios</a>
+              <a href="/rol">Roles</a>
+            </div>
+          </li>
+        </ul>
+          <div class="mx-auto">
+            <a class="navbar-brand">BIENVENIDO A GESTION DE USUARIOS</a>
+          </div>
+            <button type="button" class="btn btn-danger" (click)="onLogout()">Cerrar sesion</button>
+      </div>
     </div>
- </nav>
-
+  </nav>
 
   <input type="radio" name="estado" id="btn1" hidden>
-<input type="radio" name="estado" id="btn2" hidden>
+  <input type="radio" name="estado" id="btn2" hidden>
 
-<div class="botones">
-  <label for="btn1" class="boton" routerLink="/gestuserp">Pendientes</label>
-  <label for="btn2" class="boton2" routerLink="/useractive">Activos</label>
-  <label for="btn3" class="boton" routerLink="/userinactive">Inactivos</label>
-  <label for="btn4" class="boton" routerLink="/userdenied">Rechazados</label>
-</div>
+  <div class="botones">
+    <label for="btn1" class="boton" routerLink="/gestuserp">Pendientes</label>
+    <label for="btn2" class="boton2" routerLink="/useractive">Activos</label>
+    <label for="btn3" class="boton" routerLink="/userinactive">Inactivos</label>
+    <label for="btn4" class="boton" routerLink="/userdenied">Rechazados</label>
+  </div>
 
-
-   <div>
+  <div>
     <div class="tabla oculto" id="tablaActivos">
+    <div class="encabezado">Usuario</div>
     <div class="encabezado">Nombre</div>
     <div class="encabezado">Apellido</div>
-    <div class="encabezado">Usuario</div>
-    <div class="encabezado">Estado</div>
     <div class="encabezado">Rol</div>
-    <div class="encabezado"></div>
+    <div class="encabezado">Estado</div>
+  <div class="encabezado"></div>
 
-    <div>2</div>
-    <div>María López</div>
-    <div>Activo</div>
-    <div>Editar</div>
-    <div>2</div>
-    <div><button class="btn btn-danger">Inactivar</button></div>
-
-    <div>4</div>
-    <div>Luis Gómez</div>
-    <div>Activo</div>
-    <div>Editar</div>
-    <div>2</div>
-    <div><button class="btn btn-danger">Inactivar</button></div>
+  <ng-container *ngFor="let user of usuariosPaginados">
+    <div>{{ user.usuario }}</div>
+    <div>{{ user.nombres }}</div>
+    <div>{{ user.apellidos }}</div>
+    <div>{{ user.rol }}</div>
+    <div>{{ user.estado }}</div>
 
 
+  <div>
+    <!-- Confirmación inline -->
+    <ng-container *ngIf="confirmarInactivarId === user._id; else botonNormal">
+        <button class="btn btn-danger btn-sm spaced-button" (click)="inactivar(user._id)">Sí</button>
+        <button class="btn btn-secondary btn-sm" (click)="cancelarInactivar()">No</button>
+    </ng-container>
+    <ng-template #botonNormal>
+        <button class="btn btn-warning" (click)="confirmarInactivar(user._id)">Inactivar</button>
+    </ng-template>
+  </div>
+  </ng-container>
 
 
 </div>
 
+<!-- 🔹 Controles de paginación -->
+<div class="paginacion text-center mt-3" *ngIf="totalPages > 1">
+  <button class="btn btn-success"
+    (click)="cambiarPagina(currentPage - 1)"
+    [disabled]="currentPage === 1">
+      Anterior
+  </button>
 
+  <span class="pagina-label">Página {{ currentPage }} de {{ totalPages }}</span>
 
+  <button class="btn btn-success"
+    (click)="cambiarPagina(currentPage + 1)"
+    [disabled]="currentPage === totalPages">
+      Siguiente
+  </button>
+</div>
+
+<!-- Mensaje inline -->
+<div *ngIf="mensaje"
+  class="alert alert-info alert-dismissible fade show mt-3 text-center"
+  role="alert"
+  style="max-width: 500px; margin: 0 auto;">
+
+  {{ mensaje }}
+
+  <button
+    type="button" class="btn-close" (click)="mensaje = ''" aria-label="Close">
+  </button>
+</div>

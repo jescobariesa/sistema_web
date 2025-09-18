@@ -66,4 +66,35 @@ router.put("/:id/rechazar", async (req, res) => {
   }
 });
 
+// GET /api/usuarios/activos
+router.get("/activos", async (req, res) => {
+  try {
+    const activos = await Usuario.find({ estado: "activo" });
+    res.json(activos);
+  } catch (error) {
+    console.error(error);
+    res.status(500).json({ msg: "Error al obtener usuarios activos" });
+  }
+});
+
+// PUT /api/usuarios/:id/inactivar
+router.put("/:id/inactivar", async (req, res) => {
+  try {
+    const { id } = req.params;
+    const user = await Usuario.findByIdAndUpdate(
+      id,
+      { estado: "inactivo" },
+      { new: true }
+    );
+
+    if (!user) return res.status(404).json({ msg: "Usuario no encontrado" });
+
+    res.json({ msg: "Usuario inactivado con éxito", data: user });
+  } catch (error) {
+    console.error(error);
+    res.status(500).json({ msg: "Error al inactivar usuario" });
+  }
+});
+
+
 export default router;

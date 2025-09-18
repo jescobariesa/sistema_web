@@ -1,11 +1,11 @@
-.contenedor-login{ 
-    
+.contenedor-login{
+
     min-height: 100vh;
     background:linear-gradient(27deg, #34495e 50%, #2c3c50 50%);
-     
+
   }
 
- 
+
  .sidebar {
       height: 100vh;
       width: 130px;
@@ -33,7 +33,7 @@
       grid-template-columns: 200px  200px 200px 200px;
       margin-top: 30px;
       margin-left: 230px;
-   
+
     }
 
     .botones button {
@@ -45,7 +45,7 @@
       background-color:#1A2B4C ;
       color: white;
       border-radius: 5px;
-  
+
     }
      .botones button:hover {
       background-color: #0056b3;
@@ -93,7 +93,7 @@ input#btn2:checked ~ .botones .boton[for="btn2"] {
       background-color: #1A2B4C;
       padding: 10px;
       border-radius: 8px;
-      width: fit-content; 
+      width: fit-content;
       margin: auto;
       margin-left: 230px;
     }
@@ -110,4 +110,12 @@ input#btn2:checked ~ .botones .boton[for="btn2"] {
       background-color: #B0B0B0;
     }
 
- 
+  .pagina-label {
+  margin: 0 10px;
+  color: white;
+  font-weight: bold; /* opcional, para que resalte */
+}
+
+.spaced-button {
+    margin-right: 30px; /* Ajusta este valor según necesites */
+}

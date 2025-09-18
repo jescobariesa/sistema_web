@@ -1,4 +1,5 @@
 // frontend/src/app/services/usuario.service.ts
+
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
@@ -25,6 +26,19 @@ autorizarUsuario(id: string, rol: string, estado: string): Observable<any> {
 // Rechazar usuario
 rechazarUsuario(id: string): Observable<any> {
   return this.http.put(`${this.apiUrl}/${id}/rechazar`, {});
+}
+
+// 🔹 Obtener usuarios activos
+getActivos(): Observable<any[]> {
+  return this.http.get<any[]>(`${this.apiUrl}/activos`);
+}
+
+// 🔹 Inactivar usuario
+inactivarUsuario(id: string): Observable<any> {
+  return this.http.put<{ msg: string }>(
+    `${this.apiUrl}/${id}/inactivar`,
+    {}
+  );
 }
 
 }
