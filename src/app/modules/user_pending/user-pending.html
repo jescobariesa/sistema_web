@@ -45,7 +45,6 @@
     <div>{{ user.rol }}</div>
     <div>{{ user.estado }}</div>
 
-
   <div>
     <!-- Confirmación inline -->
     <ng-container *ngIf="confirmarInactivarId === user._id; else botonNormal">
@@ -57,12 +56,10 @@
     </ng-template>
   </div>
   </ng-container>
-
-
 </div>
 
 <!-- 🔹 Controles de paginación -->
-<div class="paginacion text-center mt-3" *ngIf="totalPages > 1">
+<div class="paginacion text-center mt-3">
   <button class="btn btn-success"
     (click)="cambiarPagina(currentPage - 1)"
     [disabled]="currentPage === 1">

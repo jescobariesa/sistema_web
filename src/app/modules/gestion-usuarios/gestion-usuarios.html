@@ -28,7 +28,7 @@
     <label class="boton" routerLink="/userinactive">Inactivos</label>
     <label class="boton" routerLink="/userdenied">Rechazados</label>
 
-  </div> 
+  </div>
 
 <!-- 🔹 Tabla dinámica -->
   <div class="tabla" id="tablaPendientes">
@@ -57,9 +57,8 @@
       <div>{{ user.fecha_nacimiento | date:'yyyy-MM-dd' }}</div>
 
       <!-- 🔹 Select de rol -->
-      <div class="form-control">
+      <div>
         <select
-         
           [(ngModel)]="user.selectedRol"
           [attr.name]="'rol-' + user._id"
           aria-label="Seleccionar rol para el usuario">
@@ -70,9 +69,8 @@
       </div>
 
       <!-- 🔹 Select de estado -->
-      <div class="form-control">
+      <div>
         <select
-          
           [(ngModel)]="user.selectedEstado"
           [attr.name]="'estado-' + user._id"
           aria-label="Seleccionar estado para el usuario">>

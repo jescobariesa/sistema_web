@@ -96,5 +96,47 @@ router.put("/:id/inactivar", async (req, res) => {
   }
 });
 
+// ESTO LO HICE YO
+
+// GET /api/usuarios/inactivos
+router.get("/inactivos", async (req, res) => {
+  try {
+    const inactivos = await Usuario.find({ estado: "inactivo" });
+    res.json(inactivos);
+  } catch (error) {
+    console.error(error);
+    res.status(500).json({ msg: "Error al obtener usuarios inactivos" });
+  }
+});
+
+// PUT /api/usuarios/:id/activar
+router.put("/:id/activar", async (req, res) => {
+  try {
+    const { id } = req.params;
+    const user = await Usuario.findByIdAndUpdate(
+      id,
+      { estado: "activo" },
+      { new: true }
+    );
+
+    if (!user) return res.status(404).json({ msg: "Usuario no encontrado" });
+
+    res.json({ msg: "Usuario activado con éxito", data: user });
+  } catch (error) {
+    console.error(error);
+    res.status(500).json({ msg: "Error al activar usuario" });
+  }
+});
+
+// GET /api/usuarios/rechazados
+router.get("/rechazados", async (req, res) => {
+  try {
+    const rechazados = await Usuario.find({ estado: "rechazado" });
+    res.json(rechazados);
+  } catch (error) {
+    console.error(error);
+    res.status(500).json({ msg: "Error al obtener usuarios rechazados" });
+  }
+});
 
 export default router;

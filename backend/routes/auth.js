@@ -99,7 +99,7 @@ router.post("/login", async (req, res) => {
 
     // 4. (Opcional) Bloquear acceso si no está activo
     if (user.estado !== "activo") {
-      return res.status(403).json({ msg: "Cuenta pendiente de activación" });
+      return res.status(403).json({ msg: "Usuario inactivado o pendiente de activación" });
     }
 
     // 5. Respuesta

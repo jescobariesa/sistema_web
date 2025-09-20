@@ -41,4 +41,24 @@ inactivarUsuario(id: string): Observable<any> {
   );
 }
 
+// EST LO HICE YO
+
+// Obtener usuarios activos
+getInactivos(): Observable<any[]> {
+  return this.http.get<any[]>(`${this.apiUrl}/inactivos`);
+}
+
+// Activar usuario
+activarUsuario(id: string): Observable<any> {
+  return this.http.put<{ msg: string }>(
+    `${this.apiUrl}/${id}/activar`,
+    {}
+  );
+}
+
+// Obtener usuarios rechazados
+getRechazados(): Observable<any[]> {
+  return this.http.get<any[]>(`${this.apiUrl}/rechazados`);
+}
+
 }

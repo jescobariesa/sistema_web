@@ -102,8 +102,8 @@ input#btn2:checked ~ .botones .boton[for="btn2"] {
       background-color: #1A2B4C;
       padding: 10px;
       border-radius: 8px;
-     
-      
+
+
     }
     .tabla div {
       display: block;
