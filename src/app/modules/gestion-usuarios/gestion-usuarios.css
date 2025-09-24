@@ -92,8 +92,10 @@ input#btn2:checked ~ .botones .boton[for="btn2"] {
 
 
     .tabla {
-     margin-left: 145px;
+  
+     width: 1000px;
       max-width: 1200px;
+      min-width: 1000px;
       display: grid;
       grid-template-columns:repeat(11,1fr) ;
       grid-template-columns: repeat(4,fr);
@@ -102,6 +104,10 @@ input#btn2:checked ~ .botones .boton[for="btn2"] {
       background-color: #1A2B4C;
       padding: 10px;
       border-radius: 8px;
+      width: fit-content;
+      margin: auto;
+      margin-left: 150px;
+   
 
 
     }
@@ -111,6 +117,7 @@ input#btn2:checked ~ .botones .boton[for="btn2"] {
       background-color: #C0C0C0;
       box-shadow: 2px 2px 10px rgba(0, 0, 0, .40);
       text-align: center;
+      
     }
 
     .tabla .encabezado {
@@ -175,7 +182,7 @@ input#btn2:checked ~ .botones .boton[for="btn2"] {
 }
 
 .confirm-actions {
-  margin-top: 10px;
+  margin-top: 0px;
   display: flex;
   justify-content: center;
   gap: 10px;
