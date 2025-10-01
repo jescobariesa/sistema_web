@@ -58,10 +58,11 @@ export class FormsRegistroComponent {
     // 3️⃣ Llamar al backend
     this.authService.register(data).subscribe({
       next: (res) => {
-        this.mensaje = `✅ Registro exitoso. Usuario asignado: ${res.data.usuario}`;
+        this.mensaje =
+        `✅ Registro exitoso ${res.data.nombres} ${res.data.apellidos}, el usuario asignado es: ${res.data.usuario}.`;
 
         // Opcional: redirigir después de 2 segundos
-        setTimeout(() => this.router.navigate(['/login']), 2000);
+        setTimeout(() => this.router.navigate(['/login']), 10000);
       },
       error: (err) => {
         this.mensaje = `❌ Error: ${err.error.msg}`;
@@ -69,3 +70,7 @@ export class FormsRegistroComponent {
     });
   }
 }
+
+// Prodimos pasos
+// Implementar la deshabilitación de campos al darle aceptar
+// Implementar la x en mensaje inline que ya tenemos

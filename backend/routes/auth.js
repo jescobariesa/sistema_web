@@ -60,6 +60,8 @@ router.post("/register", async (req, res) => {
       msg: "Usuario registrado con éxito",
       data: {
         usuario: user.usuario,
+        nombres: user.nombres,
+        apellidos: user.apellidos,
         rol: user.rol,
         estado: user.estado,
         createdAt: user.createdAt
@@ -107,6 +109,8 @@ router.post("/login", async (req, res) => {
       msg: "Login exitoso",
       data: {
         usuario: user.usuario,
+        nombres: user.nombres,
+        apellidos: user.apellidos,
         rol: user.rol,
         estado: user.estado
       }
