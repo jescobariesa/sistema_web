@@ -120,3 +120,17 @@
       background-color: grey;
     }
 
+    .contenedor{
+      
+      max-width: 500px;
+      display: grid;
+      background-color: #1A2B4C;
+      border-radius: 5px;
+      margin: auto;
+      margin-top: 20px;
+      
+    }
+    .navbar-brand{
+      margin-left: 130px;
+    }
+
