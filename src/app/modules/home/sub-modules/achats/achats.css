@@ -122,7 +122,7 @@
 }
 
     .con4 {
-      max-width: 1110px;
+      max-width: 1210px;
       display: grid;
       grid-template-columns:repeat(6,1fr) ;
       grid-template-rows: repeat(6,fr);
@@ -139,7 +139,7 @@
 
     .con4 div {
       display: block;
-      padding: 5px;
+      padding-right: 45px;
       background-color: #C0C0C0;
       box-shadow: 2px 2px 10px rgba(0, 0, 0, .40);
       text-align: center;
