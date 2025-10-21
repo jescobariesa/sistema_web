@@ -3,6 +3,8 @@ import cors from "cors";
 import connectDB from "./db.js";
 import authRoutes from "./routes/auth.js";
 import usuariosRoutes from "./routes/usuarios.js";
+import proveedoresRoutes from "./routes/proveedores.js";
+import articulosRoutes from "./routes/articulos.js";
 
 const app = express();
 
@@ -16,6 +18,8 @@ await connectDB();
 // Rutas
 app.use("/api/auth", authRoutes);
 app.use("/api/usuarios", usuariosRoutes);
+app.use("/api/proveedores", proveedoresRoutes);
+app.use("/api/articulos", articulosRoutes);
 
 // Arranque
 const PORT = 4000;

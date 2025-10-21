@@ -1,62 +1,74 @@
 <div class="contenedor-login">
 
- <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
     <div class="container-fluid">
-
-        <div class="collapse navbar-collapse" id="navbarNavDarkDropdown">
-
-             <div class="mx-auto">
-                <a class="navbar-brand">INGRESO DE NUEVOS PROVEEDORES</a>
-             </div>
-
-             <button type="button" class="btn btn-danger" (click)="onLogout()">Cerrar sesion</button>
-
+      <div class="collapse navbar-collapse" id="navbarNavDarkDropdown">
+        <div class="mx-auto">
+          <a class="navbar-brand">INGRESO DE NUEVOS PROVEEDORES</a>
         </div>
+        <button type="button" class="btn btn-danger" routerLink="/login">Cerrar sesión</button>
+      </div>
+    </div>
+  </nav>
+
+  <div>
+    <a href="/home"><mat-icon class="icono-blanco large">home</mat-icon></a>
+  </div>
+
+  <div class="contenedor">
+    <div class="contenedor-insumos">
+
+      <div class="card">
+        <input type="text" placeholder="ID" [value]="codigoGenerado" disabled>
+      </div><br>
+
+      <div class="card">
+        <input type="text" placeholder="Nombre del Proveedor"
+               [(ngModel)]="formData.nombre" [disabled]="registroExitoso" required>
+      </div><br>
+
+      <div class="card">
+        <input type="text" placeholder="Dirección"
+               [(ngModel)]="formData.direccion" [disabled]="registroExitoso" required>
+      </div><br>
+
+      <div class="card">
+        <input type="email" placeholder="Correo"
+               [(ngModel)]="formData.correo" [disabled]="registroExitoso" required>
+      </div><br>
+
+      <div class="card">
+        <input type="text" placeholder="Persona de Contacto"
+               [(ngModel)]="formData.contacto" [disabled]="registroExitoso" required>
+      </div><br>
+
+      <div class="card">
+        <input type="text" placeholder="Número de teléfono"
+               [(ngModel)]="formData.telefono" [disabled]="registroExitoso" required>
+      </div><br>
+
+      <div class="botones-r">
+        <button class="btn btn-success"
+                (click)="registrarProveedor()"
+                [disabled]="!formData.nombre || !formData.direccion || !formData.correo || !formData.contacto || !formData.telefono || registroExitoso || isSubmitting">
+          Registrar
+        </button>&nbsp;&nbsp;
+
+        <button class="btn btn-primary"
+                (click)="limpiarCampos()"
+                [disabled]="registroExitoso">
+          Limpiar campos
+        </button>
+      </div>
+
+      <!-- Mensaje Inline -->
+      <div *ngIf="mensaje"
+           class="alert alert-info alert-dismissible fade show mt-3 text-center"
+           role="alert"
+           style="max-width: 600px; margin: 0 auto;">
+        {{ mensaje }}
+      </div>
 
     </div>
- </nav>
-              <div>
-               <a href="/home"><mat-icon class="icono-blanco large">home</mat-icon></a>
-            </div>
-
- <div class="contenedor">
-   <div class="contenedor-insumos">
-   
-            <div class="card">
-          
-               <input type="text" placeholder="ID" disabled >
-               
-            </div><br>
-
-            <div class="card">
-               
-               <input type="text" placeholder="Ejemplo-Iesa">
-            </div><br>
-
-            <div class="card">  
-            
-               <input type="text" placeholder="20 Av 9-51">
-            </div><br>
-
-            <div class="card">
-               
-               <input type="text" placeholder="ejemplo@gmail.com">
-            </div><br>
-
-             <div class="card">
-            
-               <input type="text" placeholder="Persona de Contacto">
-            </div><br>
-
-            <div class="card">
-               
-               <input type="text" placeholder="Numero de telefono">
-            </div><br>
-           <div class="botones-r">
-            <button class="btn btn-success">Registrar</button>&nbsp;&nbsp;
-            <button class="btn btn-primary">Limpiar campos</button>
-           </div>
   </div>
-</div>
-
 </div>

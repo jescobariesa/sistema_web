@@ -1,93 +1,76 @@
 <div class="contenedor-login">
 
- <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
     <div class="container-fluid">
-
-        <div class="collapse navbar-collapse" id="navbarNavDarkDropdown">
-
-             <div class="mx-auto">
-                <a class="navbar-brand">INGRESO DE NUEVOS ARTICULOS</a>
-             </div>
-
-             <button type="button" class="btn btn-danger" (click)="onLogout()">Cerrar sesion</button>
-
+      <div class="collapse navbar-collapse" id="navbarNavDarkDropdown">
+        <div class="mx-auto">
+          <a class="navbar-brand">INGRESO DE NUEVOS ARTÍCULOS</a>
         </div>
-
+        <button type="button" class="btn btn-danger" (click)="onLogout()">Cerrar sesion</button>
+      </div>
     </div>
- </nav>
-              <div>
-               <a href="/home"><mat-icon class="icono-blanco large">home</mat-icon></a>
-            </div>
-<div class="contenedor">
-            <div class="grid-container">
+  </nav>
 
+  <div>
+    <a href="/home"><mat-icon class="icono-blanco large">home</mat-icon></a>
+  </div>
 
-                 <input class="input-1" type="text" placeholder="EL ID se generara automaticamente " disabled >
+  <div class="contenedor">
+    <div class="grid-container">
 
-                 <input id="Articulo" type="text"  class="input-2" type="text" placeholder="Proveedor ">
+      <input class="input-1" type="text" placeholder="ID automático" [value]="formData.codigo" disabled>
 
-                  <datalist id="lista-articulos">
+      <select
+        class="input-2"
+        [(ngModel)]="formData.proveedor"
+        name="proveedor"
+        aria-label="Seleccionar proveedor"
+        title="Seleccionar proveedor"
+        required>
+        <option value="">Seleccione proveedor</option>
+        <option *ngFor="let p of proveedores" [value]="p.codigo">{{ p.codigo }}</option>
+      </select>
 
-                  <option>Playeras</option>
-                  <option>Pantalones</option>
+      <input type="text" class="input-2" placeholder="Nombre del Artículo" [(ngModel)]="formData.nombre" required>
 
-                 </datalist>
+      <div class="grid">
+        <button class="btn btn-success"
+                [disabled]="!formData.proveedor || !formData.nombre"
+                (click)="guardarArticulo()">
+          {{ editandoId ? 'Actualizar' : 'Guardar' }}
+        </button>
 
+        <button class="btn btn-primary" (click)="limpiarCampos()">Limpiar Campos</button>
+        <button class="btn btn-warning" (click)="exportarPDF()">Descargar en PDF</button>
+      </div>
+    </div>
+  </div>
 
+  <div *ngIf="mensaje" class="alert alert-info text-center mt-3">
+    {{ mensaje }}
+  </div>
 
-                 <input id="Articulo" type="text" list="lista-articulos" class="input-2" placeholder="Nombre del Articulo">
+  <div class="tabla mt-4">
+    <div class="encabezado">ID</div>
+    <div class="encabezado">Proveedor</div>
+    <div class="encabezado">Nombre</div>
+    <div class="encabezado">Acciones</div>
 
-               <div class="grid">
-                <button class="btn btn-success" >Guardar
-               </button>
+    <ng-container *ngFor="let art of articulos">
+      <div>{{ art.codigo }}</div>
+      <div>{{ art.proveedor }}</div>
+      <div>{{ art.nombre }}</div>
+      <div>
+        <button class="btn btn-success btn-sm me-2" (click)="editarArticulo(art)">Modificar</button>
+        <button class="btn btn-danger btn-sm" (click)="eliminarArticulo(art._id)">Eliminar</button>
+      </div>
+    </ng-container>
+  </div>
 
-               <button class="btn btn-primary">
-                 Limpiar Campos
-               </button>
+  <div class="text-center mt-3">
+    <button class="btn btn-success" (click)="cambiarPagina(-1)" [disabled]="page === 1">Anterior</button>
+    <span class="pagina-label">Página {{ page }} de {{ totalPages }}</span>
+    <button class="btn btn-success" (click)="cambiarPagina(1)" [disabled]="page === totalPages">Siguiente</button>
+  </div>
 
-               <button class="btn btn-warning">
-                 Descargar en PDF
-              </button>
-
-               </div>
-            </div>
-</div><br>
-         
-
-
-               <div class="tabla" id="tablaPendientes">
-                    <div class="encabezado">ID</div>
-                    <div class="encabezado">Proveedor</div>
-                    <div class="encabezado">Nombre Del Articulo</div>
-                    <div></div>
-                    <div></div>
-                    <div>1</div>
-                    <div>ProveedorA</div>
-                    <div>Playeras</div>
-
-
-
-
-                    <div class="botones">
-                      <label for="bt1" class="btn btn-success" routerLink=""> Modificar</label>
-                    </div>
-
-                    <div class="botones">
-                     <label for="btn2" class="btn btn-danger" routerLink="" >Eliminar</label>
-                    </div>
-
-                    <div>2</div>
-                    <div>ProveedorB</div>
-                    <div>Pantalones</div>
-                    <div class="botones">
-                     <label for="btn1" class="btn btn-success" routerLink="">Modificar</label>
-                  </div>
-
-                    <div class="botones">
-                     <label for="btn2" class="btn btn-danger" routerLink="">Eliminar</label>
-                  </div>
-               </div>
-           
-              
 </div>
-

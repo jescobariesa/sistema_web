@@ -1,23 +1,23 @@
-.contenedor-login{ 
-    
+.contenedor-login{
+
     min-height: 100vh;
     background:linear-gradient(27deg, #34495e 50%, #2c3c50 50%);
-     
+
   }
 
 .mat-icon{
   position: absolute;
   margin-top: -35px;
   left: 25px;
-   
-  } 
 
- 
+  }
+
+
 .grid-container{
   margin-top: 10px;
   display: grid;
-  place-items: center; 
-              
+  place-items: center;
+
 }
 
 .input-1{
@@ -39,23 +39,23 @@
   align-items: center;     /* centra verticalmente si hay altura */
   padding: 20px;
   font-family:Arial, Helvetica, sans-serif ;
-  
- 
+
+
 }
 
 
 .tabla {
-      
+
       max-width: 900px;
       display: grid;
-      grid-template-columns:repeat(5,4fr) ;
-      grid-template-columns: repeat(5,1fr);
+      grid-template-columns:repeat(4,4fr) ;
+      grid-template-columns: repeat(4,1fr);
       gap:0;
       color: #1A2B4C;
       background-color: #1A2B4C;
       padding: 10px;
       border-radius: 8px;
-      width: fit-content; 
+      width: fit-content;
       margin: 0 auto;
     }
     .tabla div {
@@ -72,7 +72,7 @@
     }
 .icono-blanco{
    color: white;
-  
+
 }
 
 .icono-blanco.large{
@@ -85,12 +85,12 @@
 
 
  .modificar{
-      
+
       padding: 10px 40px;
       margin-right: 10px;
       cursor: pointer;
       border: none;
-      
+
       border-radius: 5px;
       color: #ffff;
  }
@@ -102,7 +102,7 @@
 
   .eliminar {
   padding: 10px 20px;
-  
+
   border-radius: 6px;
   cursor: pointer;
   transition: 0.3s;
@@ -121,16 +121,21 @@
     }
 
     .contenedor{
-      
+
       max-width: 500px;
       display: grid;
       background-color: #1A2B4C;
       border-radius: 5px;
       margin: auto;
       margin-top: 20px;
-      
+
     }
     .navbar-brand{
       margin-left: 130px;
     }
 
+  .pagina-label {
+  margin: 0 10px;
+  color: white;
+  font-weight: bold; /* opcional, para que resalte */
+}
