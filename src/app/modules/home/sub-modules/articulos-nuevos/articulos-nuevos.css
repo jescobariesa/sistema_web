@@ -50,7 +50,7 @@
       display: grid;
       grid-template-columns:repeat(4,4fr) ;
       grid-template-columns: repeat(4,1fr);
-      gap:0;
+      gap:1px;
       color: #1A2B4C;
       background-color: #1A2B4C;
       padding: 10px;
