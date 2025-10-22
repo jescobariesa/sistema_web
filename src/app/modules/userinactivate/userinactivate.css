@@ -127,3 +127,7 @@ input#btn2:checked ~ .botones .boton[for="btn2"] {
 .spaced-button {
     margin-right: 30px; /* Ajusta este valor según necesites */
 }
+
+.navbar-brand{
+      margin-left: 140px;
+     }

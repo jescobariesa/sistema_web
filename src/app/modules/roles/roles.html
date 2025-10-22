@@ -4,21 +4,51 @@
     <div class="container-fluid">
 
         <div class="collapse navbar-collapse" id="navbarNavDarkDropdown">
-            <ul class="navbar-nav">
-                <li class="nav-item dropdown">
 
-                                    <div class="sidebar" >
-                                        <a href="/home">Inicio</a>
-                                        <a href="/gestuserp">Gestión de Usuarios</a>
-                                        <a href="/rol">Roles</a>
-                                    </div>
-                            </li>
-                         </ul>
                         <div class="mx-auto">
-                          <a class="navbar-brand">BIENVENIDO A GESTION DE ROLES</a>
+                          <a class="navbar-brand">BIENVENIDO DE CLIENTES</a>
                         </div>
                         <button type="button" class="btn btn-danger" (click)="onLogout()">Cerrar sesion</button>
         </div>
     </div>
  </nav>
+
+   <div>
+    <a href="/home"><mat-icon class="icono-blanco large">home</mat-icon></a>
+  </div>
+
+     <div class="contenedor">
+      <div class="contenedor-insumos">
+
+        <div class="card">
+            <input type="text" placeholder="ID">
+        </div><br>
+
+         <div class="card">
+            <input type="text" placeholder="Nombres">
+        </div><br>
+
+        <div class="card">
+            <input type="text" placeholder="Apellidos">
+        </div><br>
+
+        <div class="card">
+            <input type="text" placeholder="DPI">
+        </div><br>
+       
+       <div>
+        Desea agregar Nit?
+        <label class="switch">
+          <input type="checkbox">
+          <span class="slider round"></span>
+        </label>
+       </div>
+
+       <div class="card2">
+         <input placeholder="Nit"  type="number">
+       </div>
+
+      </div>
+     </div>
+
 </div>

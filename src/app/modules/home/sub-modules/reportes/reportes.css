@@ -23,3 +23,61 @@
 .icono-blanco:hover{
   color: #ecececec;
 }
+
+.grid{
+  display: grid;
+  grid-template-columns: repeat(3, auto); /* 3 columnas, una por botón */
+  gap: 10px; /* espacio entre botones */
+  justify-content: center; /* centra el grupo horizontalmente */
+  align-items: center;     /* centra verticalmente si hay altura */
+  padding: 20px;
+  font-family:Arial, Helvetica, sans-serif ;
+
+
+}
+
+
+.contenedor{
+      
+      width:300px;
+      display: grid;
+      gap: 0px;
+      color: #FFF;
+      background-color: #1A2B4C;
+      padding: 10px;
+      border-radius: 8px;
+      margin: auto;
+      margin-top: 20px;
+    
+    }
+
+ .grid-container{
+  margin-top: 10px;
+  display: grid;
+  place-items: center;
+
+}
+
+.input-1{
+  margin-top: 10px;
+  width: 260px;
+  text-align: center;
+  display: block;
+}
+
+.input-1::placeholder{
+  color: #000;
+}
+
+.grid{
+  display: grid;
+  gap: 0px; /* espacio entre botones */
+  justify-content: center; /* centra el grupo horizontalmente */
+  align-items: center;     /* centra verticalmente si hay altura */
+  padding: 10px;
+  font-family:Arial, Helvetica, sans-serif ;
+}
+
+    .navbar-brand{
+      margin-left: 130px;
+     }

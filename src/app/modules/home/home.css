@@ -69,3 +69,8 @@
     .sidebar a:hover {
       background-color: #575757;
     }
+
+    .navbar-brand{
+      margin-left: 140px;
+     }
+

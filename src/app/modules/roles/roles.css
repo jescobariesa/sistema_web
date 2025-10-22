@@ -3,22 +3,135 @@
     background:linear-gradient(27deg, #34495e 50%, #2c3c50 50%);
   }
 
-   .sidebar {
-      height: 100vh;
-      width: 130px;
-      position: fixed;
-      top: 34px;
-      left: 0;
-      background-color: #212529;
-      padding-top: 20px;
-      color: white;
+  .mat-icon{
+  position: absolute;
+  margin-top: -35px;
+  left: 25px;
+  } 
+
+.icono-blanco{
+   color: white;
+  
+}
+
+.icono-blanco.large{
+  transform: scale(1.5);
+
+}
+
+.icono-blanco:hover{
+  color: #ecececec;
+}
+.navbar-brand{
+ margin-left: 140px;
+ }
+
+.contenedor{
+      
+      max-width: 320px;
+      display: grid;
+      gap: 0px;
+      color: #FFF;
+      background-color: #1A2B4C;
+      padding: 10px;
+      border-radius: 8px;
+      margin: auto;
+      margin-top: 20px;
     }
-.sidebar a {
+
+    .card{
       display: block;
-      color: white;
+      background-color: #C0C0C0;
+      box-shadow: 2px 2px px10 rgba(0, 0, 0, .40);
+      text-align: center;
+      height: 60px;
       padding: 15px;
-      text-decoration: none;
+     
     }
-    .sidebar a:hover {
-      background-color: #575757;
+
+    .encabezado {
+      font-weight: bold;
+      background-color: #B0B0B0;
+    }
+
+
+  .switch {
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  height: 34px;
+  margin-left: 10px;
+  
+}
+
+.switch input { 
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 26px;
+  width: 26px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+input:checked + .slider {
+  background-color: #2196F3;
+}
+
+input:focus + .slider {
+  box-shadow: 0 0 1px #2196F3;
+}
+
+input:checked + .slider:before {
+  -webkit-transform: translateX(26px);
+  -ms-transform: translateX(26px);
+  transform: translateX(26px);
+}
+
+/* Rounded sliders */
+.slider.round {
+  border-radius: 34px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
+} 
+
+
+ input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+    .card2{
+      display: block;
+      background-color: #C0C0C0;
+      box-shadow: 2px 2px px10 rgba(0, 0, 0, .40);
+      text-align: center;
+      height: 60px;
+      padding: 15px;
+      border-radius: 8px;
+      margin-top: 10px;
+     
     }

@@ -123,3 +123,7 @@ input#btn2:checked ~ .botones .boton[for="btn2"] {
   color: white;
   font-weight: bold; /* opcional, para que resalte */
 }
+
+.navbar-brand{
+      margin-left: 140px;
+     }

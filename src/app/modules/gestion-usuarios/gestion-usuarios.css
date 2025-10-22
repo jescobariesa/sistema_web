@@ -187,3 +187,8 @@ input#btn2:checked ~ .botones .boton[for="btn2"] {
   justify-content: center;
   gap: 10px;
 }
+
+.navbar-brand{
+      margin-left: 140px;
+     }
+

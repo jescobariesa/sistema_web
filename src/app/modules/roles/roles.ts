@@ -1,10 +1,11 @@
 import { Component } from '@angular/core';
 import { SessionService } from '../../services/session.service';
-import { Router } from '@angular/router';
+import { Router, RouterModule } from '@angular/router';
+import { MatIconModule } from '@angular/material/icon';
 
 @Component({
   selector: 'app-roles',
-  imports: [],
+  imports: [RouterModule,MatIconModule],
   templateUrl: './roles.html',
   styleUrl: './roles.css'
 })
