@@ -43,10 +43,8 @@
      
     }
 
-    .contenedor2{
-      
+    .contenedor-cliente{
       max-width: 320px;
-      display: grid;
       color: #fff;
       background-color: #1A2B4C;
       padding: 10px;
@@ -56,23 +54,21 @@
       
     }
 
-    .co3{
+    .contenedor-productos{
       max-width: 320px;
-      display: grid;
-      gap: 0px;
       color: #fff;
       background-color: #1A2B4C;
       padding: 10px;
       border-radius: 8px;
-      margin-top: -360px;
+      margin-top: -358px;
       margin-left: 450px;
+      
  
     }
 
    
   
     .card{
-      display: block;
       background-color: #C0C0C0;
       box-shadow: 2px 2px px10 rgba(0, 0, 0, .40);
       text-align: center;
@@ -82,9 +78,6 @@
     }
 
        .card1{
-     
-      
-      display: block;
       background-color: #C0C0C0;
       box-shadow: 2px 2px px10 rgba(0, 0, 0, .40);
       text-align: center;
@@ -103,38 +96,36 @@
 
 }
 
-.list-group {
-  max-height: 200px; 
-  overflow-y: auto;
-  border: 1px solid #ccc;
-  padding: 10px;
-}
-
+.list-group,
 .list-provee {
-  max-height: 200px; 
+  
+  height: 200px; 
   overflow-y: auto;
   border: 1px solid #ccc;
   padding: 10px;
 }
+.list-group:empty,
+.list-provee:empty {
+  display: none;
+}
 
-    .con4 {
+    .tabla {
+      display: block;
       max-width: 1110px;
       display: grid;
       grid-template-columns:repeat(5,1fr) ;
-      gap: 0;
+      gap: 1px;
       color: #1A2B4C;
       background-color: #1A2B4C;
       padding: 10px;
       border-radius: 8px;
       margin: auto;
       margin-left: 60px;
-      margin-top: 100px;
+      margin-top: 50px;
     }
 
-
-  
 .encabezado{
-        display: block;
+      display: block;
       background-color: #C0C0C0;
       box-shadow: 2px 2px px10 rgba(0, 0, 0, .40);
       text-align: center;
@@ -143,3 +134,4 @@
 
 
 }
+
