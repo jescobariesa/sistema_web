@@ -6,6 +6,9 @@ import usuariosRoutes from "./routes/usuarios.js";
 import proveedoresRoutes from "./routes/proveedores.js";
 import articulosRoutes from "./routes/articulos.js";
 import comprasRoutes from "./routes/compras.js";
+import clientesRouter from "./routes/clientes.js";
+import ventasRouter from "./routes/ventas.js";
+import stockRoutes from "./routes/stock.js";
 
 const app = express();
 
@@ -22,6 +25,9 @@ app.use("/api/usuarios", usuariosRoutes);
 app.use("/api/proveedores", proveedoresRoutes);
 app.use("/api/articulos", articulosRoutes);
 app.use("/api/compras", comprasRoutes);
+app.use("/api/clientes", clientesRouter);
+app.use("/api/ventas", ventasRouter);
+app.use("/api/stock", stockRoutes);
 
 // Arranque
 const PORT = 4000;

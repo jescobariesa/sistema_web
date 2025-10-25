@@ -1,101 +1,158 @@
 <div class="contenedor-login">
-
- <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
     <div class="container-fluid">
-
-        <div class="collapse navbar-collapse" id="navbarNavDarkDropdown">
-
-             <div class="mx-auto">
-                <a class="navbar-brand">INGRESO DE VENTAS</a>
-             </div>
-
-             <button type="button" class="btn btn-danger" (click)="onLogout()">Cerrar sesion</button>
-
+      <div class="collapse navbar-collapse" id="navbarNavDarkDropdown">
+        <div class="mx-auto">
+          <a class="navbar-brand">INGRESO DE VENTAS</a>
         </div>
-
-    </div>
- </nav>
-
-              <div>
-               <a href="/home"><mat-icon class="icono-blanco large">home</mat-icon></a>
-            </div>
-
-<div class="contenedor">
-
-         <div class="card1">
-            <input type="text" placeholder="Cantidad">
-         </div><br>
-
-         <div class="card1">
-            <input type="text" placeholder="Precio de venta">
-         </div><br>
-
-         <div class="card1">
-            <input type="text" placeholder="Total">
-         </div><br>
-
-          <div class="botones-r">
-            <button class="btn btn-success">Registrar</button>&nbsp;&nbsp;
-            <button class="btn btn-primary">Limpiar campos</button>
-           </div>
-   </div>
-
-
-    <div class="contenedor-cliente">
-      <div class="card">
-         <h3><b>CLIENTE</b></h3>
-         </div><br>
-         
-        <div>
-         <input class="buscar" type="search"  placeholder="Buscar...">
-
-         <br>
-         <br>
-
-         <div class="list-group">
-         <a  class="list-group-item list-group-item-action active" aria-current="true"> Abarroteria.S.A</a>
-         <a class="list-group-item list-group-item-action">Tienda de la esquina.S.A</a>
-
-
-      </div>
-         
+          <button type="button" class="btn btn-danger" (click)="onLogout()">Cerrar sesion</button>
       </div>
     </div>
+  </nav>
 
-    <div class="contenedor-productos">
-      <div class="card">
-         <h3><b>PRODUCTOS</b></h3>
-         </div><br>
-  
-         
-        <div>
-         <input class="buscar" type="search"  placeholder="Buscar..."  >
-         
-         <br>
-         <br>
-         
-      <div class="list-group">
-         <a  class="list-group-item list-group-item-action active" aria-current="true"> Pantalones</a>
-         <a class="list-group-item list-group-item-action">Zapatos</a>
-         <a class="list-group-item list-group-item-action">Camisas</a>
-         <a class="list-group-item list-group-item-action">Playeras</a>
-         <a class="list-group-item list-group-item-action">Camisas</a>
-         <a class="list-group-item list-group-item-action">Camisas</a>
-         <a class="list-group-item list-group-item-action">Camisas</a>
-      </div>
-      
+  <div>
+    <a href="/home"><mat-icon class="icono-blanco large">home</mat-icon></a>
+  </div>
 
-      </div>
+  <div class="contenedor">
+
+    <div class="card1">
+      <input
+        type="text"
+        placeholder="Cantidad"
+        [(ngModel)]="formData.cantidad"
+        (input)="calcularTotal()">
     </div>
-      
-       <div class="tabla">
-         <div class="encabezado"><h6><b>CLIENTES</b></h6></div>
-         <div class="encabezado"><h6><b>PRODUCTOS</b></h6></div>
-         <div class="encabezado"><h6><b>PRECIO DE VENTA</b></h6></div>
-         <div class="encabezado"><h6><b>CANTIDAD</b></h6></div>
-         <div class="encabezado"><h6><b>TOTAL</b></h6></div>
-      </div>
+
+    <br>
+
+    <div class="card1">
+      <input
+        type="text"
+        placeholder="Precio de venta"
+        [(ngModel)]="formData.precio_venta"
+        disabled>
+    </div>
+
+    <br>
+
+    <div class="card1">
+      <input
+        type="text"
+        placeholder="Total"
+        [(ngModel)]="formData.total"
+        disabled>
+    </div>
+
+    <br>
+
+    <div class="botones-r">
+      <button
+        class="btn btn-success"
+        (click)="registrarVenta()"
+        [disabled]="!formularioValido">
+          Registrar
+      </button>&nbsp;&nbsp;
+
+      <button
+        class="btn btn-primary"
+        (click)="limpiarCampos()">
+          Limpiar campos
+      </button>
+    </div>
+  </div>
+
+<div class="contenedor-cliente">
+
+  <div class="card">
+    <h3><b>CLIENTE</b></h3>
+  </div>
+
+  <br>
+
+  <div>
+    <input
+      class="buscar"
+      type="search"
+      placeholder="Buscar..."
+      [(ngModel)]="filtroCliente">
+
+    <br>
+    <br>
+
+    <div class="list-group">
+
+      <a
+        *ngFor="let c of clientesFiltrados"
+        (click)="seleccionarCliente(c)"
+        class="list-group-item list-group-item-action active"
+        [ngClass]="{'active': clienteSeleccionado?.codigo === c.codigo}"
+        aria-current="true">
+          {{ c.codigo }} - {{ c.nombres }} {{ c.apellidos }}
+      </a>
+    </div>
+  </div>
 </div>
 
-   
+<div class="contenedor-productos">
+  <div class="card">
+    <h3><b>PRODUCTOS</b></h3>
+  </div>
+
+  <br>
+
+  <div>
+    <input
+      class="buscar"
+      type="search"
+      placeholder="Buscar..."
+      [(ngModel)]="filtroArticulo">
+
+      <br>
+      <br>
+
+    <div class="list-group">
+      <a
+        *ngFor="let a of articulosFiltrados"
+        (click)="seleccionarArticulo(a)"
+        class="list-group-item list-group-item-action active"
+        [ngClass]="{'active': articuloSeleccionado?.codigo === a.codigo}">
+          {{ a.codigo }} - {{ a.nombre }}
+      </a>
+    </div>
+  </div>
+</div>
+
+  <div class="tabla">
+    <div class="encabezado"><h6><b>CLIENTES</b></h6></div>
+    <div class="encabezado"><h6><b>PRODUCTOS</b></h6></div>
+    <div class="encabezado"><h6><b>PRECIO DE VENTA</b></h6></div>
+    <div class="encabezado"><h6><b>CANTIDAD</b></h6></div>
+    <div class="encabezado"><h6><b>TOTAL</b></h6></div>
+    <div class="encabezado"><h6><b>ACCIÓN</b></h6></div>
+
+    <ng-container *ngFor="let v of ventas">
+      <div>{{ v.cliente }}</div>
+      <div>{{ v.articulo_nombre }}</div>
+      <div>{{ v.precio_venta }}</div>
+      <div>{{ v.cantidad }}</div>
+      <div>{{ v.total }}</div>
+      <div>
+        <button class="btn btn-danger btn-sm" (click)="eliminarVenta(v._id)">Eliminar</button>
+      </div>
+    </ng-container>
+  </div>
+
+  <div class="text-center mt-3">
+    <button class="btn btn-secondary" (click)="cambiarPagina(-1)" [disabled]="page === 1">Anterior</button>
+    <span class="mx-2">Página {{ page }} de {{ totalPages }}</span>
+    <button class="btn btn-secondary" (click)="cambiarPagina(1)" [disabled]="page === totalPages">Siguiente</button>
+  </div>
+
+  <div *ngIf="mensaje" class="alert alert-info text-center mt-3">
+    {{ mensaje }}
+  </div>
+</div>
+
+
 

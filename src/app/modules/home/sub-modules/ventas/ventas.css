@@ -8,11 +8,11 @@
   position: absolute;
   margin-top: -35px;
   left: 25px;
-  } 
+  }
 
 .icono-blanco{
    color: white;
-  
+
 }
 
 .icono-blanco.large{
@@ -29,7 +29,7 @@
      }
 
 .contenedor{
-      
+
       max-width: 320px;
       display: grid;
       gap: 0px;
@@ -40,7 +40,7 @@
       margin: auto;
       margin-top: 20px;
       margin-left: 850px;
-     
+
     }
 
     .contenedor-cliente{
@@ -51,7 +51,7 @@
       border-radius: 8px;
       margin-top: -280px;
       margin-left: 60px;
-      
+
     }
 
     .contenedor-productos{
@@ -62,19 +62,19 @@
       border-radius: 8px;
       margin-top: -358px;
       margin-left: 450px;
-      
- 
+
+
     }
 
-   
-  
+
+
     .card{
       background-color: #C0C0C0;
       box-shadow: 2px 2px px10 rgba(0, 0, 0, .40);
       text-align: center;
       height: 60px;
       padding: 15px;
-      
+
     }
 
        .card1{
@@ -98,8 +98,8 @@
 
 .list-group,
 .list-provee {
-  
-  height: 200px; 
+
+  height: 200px;
   overflow-y: auto;
   border: 1px solid #ccc;
   padding: 10px;
@@ -113,7 +113,7 @@
       display: block;
       max-width: 1110px;
       display: grid;
-      grid-template-columns:repeat(5,1fr) ;
+      grid-template-columns:repeat(6,1fr) ;
       gap: 1px;
       color: #1A2B4C;
       background-color: #1A2B4C;
@@ -131,7 +131,5 @@
       text-align: center;
       height: 50px;
       padding: 15px;
-
-
 }
 

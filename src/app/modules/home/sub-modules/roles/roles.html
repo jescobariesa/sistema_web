@@ -1,0 +1,102 @@
+<div class="contenedor-login">
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container-fluid">
+      <div class="collapse navbar-collapse" id="navbarNavDarkDropdown">
+        <div class="mx-auto">
+          <a class="navbar-brand">REGISTRO DE CLIENTES</a>
+        </div>
+          <button type="button" class="btn btn-danger" (click)="onLogout()">Cerrar sesion</button>
+      </div>
+    </div>
+  </nav>
+
+  <div>
+    <a href="/home"><mat-icon class="icono-blanco large">home</mat-icon></a>
+  </div>
+
+  <div class="contenedor">
+    <div class="contenedor-insumos">
+
+      <div class="card">
+        <input
+          type="text"
+          placeholder="ID"
+          [(ngModel)]="formData.codigo"
+          disabled>
+      </div>
+
+      <br>
+
+      <div class="card">
+        <input
+          type="text"
+          placeholder="Nombres"
+          [(ngModel)]="formData.nombres"
+          [disabled]="deshabilitado">
+      </div>
+
+      <br>
+
+      <div class="card">
+        <input
+          type="text"
+          placeholder="Apellidos"
+          [(ngModel)]="formData.apellidos"
+          [disabled]="deshabilitado">
+      </div>
+
+      <br>
+
+      <div class="card">
+        <input
+          type="text"
+          placeholder="DPI"
+          [(ngModel)]="formData.dpi"
+          [disabled]="deshabilitado">
+      </div>
+
+      <br>
+
+      <div class="toggle-container">
+        <span>¿Desea agregar NIT?</span>
+          <label class="switch">
+            <input
+              type="checkbox"
+              placeholder="toggle"
+              [(ngModel)]="toggleNit">
+            <span class="slider round"></span>
+          </label>
+      </div>
+
+      <div class="card2">
+        <input
+          type="text"
+          placeholder="NIT"
+          [(ngModel)]="formData.nit"
+          [disabled]="!toggleNit || deshabilitado">
+      </div>
+
+
+
+      <div class="botones-r">
+        <button
+          class="btn btn-success"
+          (click)="registrarCliente()"
+          [disabled]="!formularioValido || deshabilitado">
+            Registrar
+          </button>&nbsp;&nbsp;
+
+        <button
+          class="btn btn-primary"
+          (click)="limpiarCampos()"
+          [disabled]="deshabilitado">
+            Limpiar datos
+          </button>
+      </div>
+
+      <div *ngIf="mensaje" class="alert alert-info text-center mt-3">
+        {{ mensaje }}
+      </div>
+    </div>
+  </div>
+</div>
