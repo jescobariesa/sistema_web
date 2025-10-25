@@ -114,6 +114,7 @@
       max-width: 1110px;
       display: grid;
       grid-template-columns:repeat(6,1fr) ;
+      grid-template-rows: repeat(6,fr);
       gap: 1px;
       color: #1A2B4C;
       background-color: #1A2B4C;
@@ -124,7 +125,7 @@
       margin-top: 50px;
     }
 
-.encabezado{
+.tabla div{
       display: block;
       background-color: #C0C0C0;
       box-shadow: 2px 2px px10 rgba(0, 0, 0, .40);
