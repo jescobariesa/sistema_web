@@ -1,53 +1,67 @@
 <div class="contenedor-login">
-
  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
     <div class="container-fluid">
-
-        <div class="collapse navbar-collapse" id="navbarNavDarkDropdown">
-
-             <div class="mx-auto">
-                <a class="navbar-brand">INGRESO DE REPORTERIA</a>
-             </div>
-
-             <button type="button" class="btn btn-danger" (click)="onLogout()">Cerrar sesion</button>
-
+      <div class="collapse navbar-collapse" id="navbarNavDarkDropdown">
+        <div class="mx-auto">
+          <a class="navbar-brand">INGRESO DE REPORTERIA</a>
         </div>
-
+          <button type="button" class="btn btn-danger" (click)="onLogout()">Cerrar sesion</button>
+      </div>
     </div>
- </nav>
+  </nav>
 
-              <div>
-               <a href="/home"><mat-icon class="icono-blanco large">home</mat-icon></a>
+  <div>
+    <a href="/home"><mat-icon class="icono-blanco large">home</mat-icon></a>
+  </div>
+
+  <div class="contenedor">
+    <div class="grid-container">
+      <div>
+
+        <h6 class="center">Generar Informe De Proveedores</h6>
+          <div class="grid">
+            <button
+              class="btn btn-warning"
+              (click)="generarReporte('proveedores')">
+                Descargar PDF
+            </button>
+          </div>
+
+          <h6 class="center">Generar Informe de Compras</h6>
+            <div class="grid">
+              <button
+                class="btn btn-warning"
+                (click)="generarReporte('compras')">
+                  Descargar PDF
+                </button>
             </div>
 
-       <div class="contenedor">
-         <div class="grid-container">
-            <div>
+          <h6 class="center">Generar Informe de Ventas</h6>
+            <div class="grid">
+              <button
+                class="btn btn-warning"
+                (click)="generarReporte('ventas')">
+                  Descargar PDF
+                </button>
+            </div>
 
-               <h6 class="center">Generar Informe De Proveedores</h6>
-             <div class="grid">
-               <button class="btn btn-warning">Descargar PDF</button>
-             </div>
+          <h6 class="center">Generar Informe de Clientes</h6>
+            <div class="grid">
+              <button
+                class="btn btn-warning"
+                (click)="generarReporte('clientes')">
+                  Descargar PDF
+                </button>
+            </div>
 
-               <h6 class="center">Generar Informe de Compras</h6>
-             <div class="grid">
-               <button class="btn btn-warning">Descargar PDF</button>
-             </div>
-
-               <h6 class="center">Generar Informe de Ventas</h6>
-             <div class="grid">
-               <button class="btn btn-warning">Descargar PDF</button>
-             </div>
-
-              <h6 class="center">Generar Informe de Clientes</h6>
-             <div class="grid">
-               <button class="btn btn-warning">Descargar PDF</button>
-             </div>
-
-               <h6 class="center">Generar Informe de Stock</h6>
-             <div class="grid">
-               <button class="btn btn-warning">Descargar PDF</button>
-             </div>
+          <h6 class="center">Generar Informe de Stock</h6>
+            <div class="grid">
+              <button
+                class="btn btn-warning"
+                (click)="generarReporte('stock')">
+                  Descargar PDF
+                </button>
+            </div>
 
             </div>
          </div>

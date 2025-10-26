@@ -9,6 +9,7 @@ import comprasRoutes from "./routes/compras.js";
 import clientesRouter from "./routes/clientes.js";
 import ventasRouter from "./routes/ventas.js";
 import stockRoutes from "./routes/stock.js";
+import reportesRoutes from "./routes/reportes.js";
 
 const app = express();
 
@@ -28,6 +29,7 @@ app.use("/api/compras", comprasRoutes);
 app.use("/api/clientes", clientesRouter);
 app.use("/api/ventas", ventasRouter);
 app.use("/api/stock", stockRoutes);
+app.use("/api/reportes", reportesRoutes);
 
 // Arranque
 const PORT = 4000;
